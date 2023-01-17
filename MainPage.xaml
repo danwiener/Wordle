@@ -66,16 +66,18 @@
                 <RowDefinition Height="85"/>
             </Grid.RowDefinitions>
             <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Start" Grid.Row="0" Margin="0, 10, 0, 10">
-                <Button x:Name="qButton" Text="Q" TextColor="#6B98BF" BackgroundColor="Transparent" HeightRequest="65" WidthRequest="65" Margin="10, 0, 10, 0" FontFamily="myriad" FontAttributes="Bold" FontSize="20"/>
-                <Button x:Name="wButton" Text="W" TextColor="#6B98BF" BackgroundColor="Transparent" HeightRequest="65" WidthRequest="65" Margin="10, 0, 10, 0" FontFamily="myriad" FontAttributes="Bold" FontSize="20"/>
-                <Button x:Name="eButton" Text="E" TextColor="#6B98BF" BackgroundColor="Transparent" HeightRequest="65" WidthRequest="65" Margin="10, 0, 10, 0" FontFamily="myriad" FontAttributes="Bold" FontSize="20"/>
-                <Button x:Name="rButton" Text="R" TextColor="#6B98BF" BackgroundColor="Transparent" HeightRequest="65" WidthRequest="65" Margin="10, 0, 10, 0" FontFamily="myriad" FontAttributes="Bold" FontSize="20"/>
-                <Button x:Name="tButton" Text="T" TextColor="#6B98BF" BackgroundColor="Transparent" HeightRequest="65" WidthRequest="65" Margin="10, 0, 10, 0" FontFamily="myriad" FontAttributes="Bold" FontSize="20"/>
-                <Button x:Name="yButton" Text="Y" TextColor="#6B98BF" BackgroundColor="Transparent" HeightRequest="65" WidthRequest="65" Margin="10, 0, 10, 0" FontFamily="myriad" FontAttributes="Bold" FontSize="20"/>
-                <Button x:Name="uButton" Text="U" TextColor="#6B98BF" BackgroundColor="Transparent" HeightRequest="65" WidthRequest="65" Margin="10, 0, 10, 0" FontFamily="myriad" FontAttributes="Bold" FontSize="20"/>
-                <Button x:Name="iButton" Text="I" TextColor="#6B98BF" BackgroundColor="Transparent" HeightRequest="65" WidthRequest="65" Margin="10, 0, 10, 0" FontFamily="myriad" FontAttributes="Bold" FontSize="20"/>
-                <Button x:Name="oButton" Text="O" TextColor="#6B98BF" BackgroundColor="Transparent" HeightRequest="65" WidthRequest="65" Margin="10, 0, 10, 0" FontFamily="myriad" FontAttributes="Bold" FontSize="20"/>
-                <Button x:Name="pButton" Text="P" TextColor="#6B98BF" BackgroundColor="Transparent" HeightRequest="65" WidthRequest="65" Margin="10, 0, 10, 0" FontFamily="myriad" FontAttributes="Bold" FontSize="20"/>
+                <Button x:Name="qButton" Clicked="OnQClicked" Text="Q" TextColor="#6B98BF" BackgroundColor="Transparent" HeightRequest="65" WidthRequest="65" Margin="10, 0, 10, 0" FontFamily="myriad" FontAttributes="Bold" FontSize="20"/>
+                <Button x:Name="wButton" Clicked="OnWClicked" Text="W" TextColor="#6B98BF" BackgroundColor="Transparent" HeightRequest="65" WidthRequest="65" Margin="10, 0, 10, 0" FontFamily="myriad" FontAttributes="Bold" FontSize="20"/>
+                <Button x:Name="eButton" Clicked="OnEClicked" Text="E" TextColor="#6B98BF" BackgroundColor="Transparent" HeightRequest="65" WidthRequest="65" Margin="10, 0, 10, 0" FontFamily="myriad" FontAttributes="Bold" FontSize="20"/>
+                <Button x:Name="rButton" Clicked="OnRClicked" Text="R" TextColor="#6B98BF" BackgroundColor="Transparent" HeightRequest="65" WidthRequest="65" Margin="10, 0, 10, 0" FontFamily="myriad" FontAttributes="Bold" FontSize="20"/>
+                <Button x:Name="tButton" Clicked="OnTClicked" Text="T" TextColor="#6B98BF" BackgroundColor="Transparent" HeightRequest="65" WidthRequest="65" Margin="10, 0, 10, 0" FontFamily="myriad" FontAttributes="Bold" FontSize="20"/>
+                <Button x:Name="yButton" Clicked="OnYClicked" Text="Y" TextColor="#6B98BF" BackgroundColor="Transparent" HeightRequest="65" WidthRequest="65" Margin="10, 0, 10, 0" FontFamily="myriad" FontAttributes="Bold" FontSize="20"/>
+                <Button x:Name="uButton" Clicked="OnUClicked" Text="U" TextColor="#6B98BF" BackgroundColor="Transparent" HeightRequest="65" WidthRequest="65" Margin="10, 0, 10, 0" FontFamily="myriad" FontAttributes="Bold" FontSize="20"/>
+                <Button x:Name="iButton" Clicked="OnIClicked" Text="I" TextColor="#6B98BF" BackgroundColor="Transparent" HeightRequest="65" WidthRequest="65" Margin="10, 0, 10, 0" FontFamily="myriad" FontAttributes="Bold" FontSize="20"/>
+                <Button x:Name="oButton" Clicked="OnOClicked" Text="O" TextColor="#6B98BF" BackgroundColor="Transparent" HeightRequest="65" WidthRequest="65" Margin="10, 0, 10, 0" FontFamily="myriad" FontAttributes="Bold" FontSize="20"/>
+                <Button x:Name="pButton" Clicked="OnPClicked" Text="P" TextColor="#6B98BF" BackgroundColor="Transparent" HeightRequest="65" WidthRequest="65" Margin="10, 0, 10, 0" FontFamily="myriad" FontAttributes="Bold" FontSize="20"/>
+                <Button x:Name="deleteButton" Text="DELETE" TextColor="#6B98BF" BackgroundColor="Transparent" HeightRequest="65" WidthRequest="130" Margin="10, 0, 10, 0" FontFamily="myriad" FontAttributes="Bold" FontSize="16"/>
+
             </HorizontalStackLayout>
             <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Start" Grid.Row="1" Margin="0, 10, 0, 10">
                 <Button x:Name="aButton" Text="A" TextColor="#6B98BF" BackgroundColor="Transparent" HeightRequest="65" WidthRequest="65" Margin="10, 0, 10, 0" FontFamily="myriad" FontAttributes="Bold" FontSize="20"/>
@@ -87,6 +89,7 @@
                 <Button x:Name="jButton" Text="J" TextColor="#6B98BF" BackgroundColor="Transparent" HeightRequest="65" WidthRequest="65" Margin="10, 0, 10, 0" FontFamily="myriad" FontAttributes="Bold" FontSize="20"/>
                 <Button x:Name="kButton" Text="K" TextColor="#6B98BF" BackgroundColor="Transparent" HeightRequest="65" WidthRequest="65" Margin="10, 0, 10, 0" FontFamily="myriad" FontAttributes="Bold" FontSize="20"/>
                 <Button x:Name="lButton" Text="L" TextColor="#6B98BF" BackgroundColor="Transparent" HeightRequest="65" WidthRequest="65" Margin="10, 0, 10, 0" FontFamily="myriad" FontAttributes="Bold" FontSize="20"/>
+                <Button x:Name="enterButton" Text="ENTER" TextColor="#6B98BF" BackgroundColor="Transparent" HeightRequest="65" WidthRequest="130" Margin="10, 0, 10, 0" FontFamily="myriad" FontAttributes="Bold" FontSize="16"/>
             </HorizontalStackLayout>
             <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Start" Grid.Row="2" Margin="0, 10, 0, 10">
                 <Button x:Name="zButton" Text="A" TextColor="#6B98BF" BackgroundColor="Transparent" HeightRequest="65" WidthRequest="65" Margin="10, 0, 10, 0" FontFamily="myriad" FontAttributes="Bold" FontSize="20"/>
