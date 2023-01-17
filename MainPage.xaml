@@ -76,7 +76,7 @@
                 <Button x:Name="iButton" Clicked="OnIClicked" Text="I" TextColor="#6B98BF" BackgroundColor="Transparent" HeightRequest="65" WidthRequest="65" Margin="10, 0, 10, 0" FontFamily="myriad" FontAttributes="Bold" FontSize="20"/>
                 <Button x:Name="oButton" Clicked="OnOClicked" Text="O" TextColor="#6B98BF" BackgroundColor="Transparent" HeightRequest="65" WidthRequest="65" Margin="10, 0, 10, 0" FontFamily="myriad" FontAttributes="Bold" FontSize="20"/>
                 <Button x:Name="pButton" Clicked="OnPClicked" Text="P" TextColor="#6B98BF" BackgroundColor="Transparent" HeightRequest="65" WidthRequest="65" Margin="10, 0, 10, 0" FontFamily="myriad" FontAttributes="Bold" FontSize="20"/>
-                <Button x:Name="deleteButton" Text="DELETE" TextColor="#6B98BF" BackgroundColor="Transparent" HeightRequest="65" WidthRequest="130" Margin="10, 0, 10, 0" FontFamily="myriad" FontAttributes="Bold" FontSize="16"/>
+                <Button x:Name="deleteButton" Clicked="OnDeleteClicked" Text="DELETE" TextColor="#6B98BF" BackgroundColor="Transparent" HeightRequest="65" WidthRequest="130" Margin="10, 0, 10, 0" FontFamily="myriad" FontAttributes="Bold" FontSize="16"/>
 
             </HorizontalStackLayout>
             <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Start" Grid.Row="1" Margin="0, 10, 0, 10">
