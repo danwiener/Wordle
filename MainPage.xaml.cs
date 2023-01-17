@@ -823,5 +823,1244 @@ public partial class MainPage : ContentPage
 			}
 		}
 	} // End method P
+
+	private void OnAClicked(object sender, EventArgs e)
+	{
+		List<Entry> firstRow = new List<Entry>() { oneOne, twoOne, threeOne, fourOne, fiveOne };
+		List<Entry> secondRow = new List<Entry>() { oneTwo, twoTwo, threeTwo, fourTwo, fiveTwo };
+		List<Entry> thirdRow = new List<Entry>() { oneThree, twoThree, threeThree, fourThree, fiveThree };
+		List<Entry> fourthRow = new List<Entry>() { oneFour, twoFour, threeFour, fourFour, fiveFour };
+		List<Entry> fifthRow = new List<Entry>() { oneFive, twoFive, threeFive, fourFive, fiveFive };
+		List<Entry> sixthRow = new List<Entry>() { oneSix, twoSix, threeSix, fourSix, fiveSix };
+
+		if (!firstFilled)
+		{
+			for (int i = 0; i < firstRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(firstRow[i].Text.ToString()))
+				{
+					firstRow[i].Text = "A";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && !secondFilled)
+		{
+			for (int i = 0; i < secondRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(secondRow[i].Text.ToString()))
+				{
+					secondRow[i].Text = "A";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && !thirdFilled)
+		{
+			for (int i = 0; i < thirdRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(thirdRow[i].Text.ToString()))
+				{
+					thirdRow[i].Text = "A";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && thirdFilled && !fourthFilled)
+		{
+			for (int i = 0; i < fourthRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(fourthRow[i].Text.ToString()))
+				{
+					fourthRow[i].Text = "A";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && thirdFilled && fourthFilled && !fifthFilled)
+		{
+			for (int i = 0; i < fifthRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(fifthRow[i].Text.ToString()))
+				{
+					fifthRow[i].Text = "A";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && thirdFilled && fourthFilled && fifthFilled && !sixthFilled)
+		{
+			for (int i = 0; i < sixthRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(sixthRow[i].Text.ToString()))
+				{
+					sixthRow[i].Text = "A";
+					break;
+				}
+			}
+		}
+	} // End method A
+
+	private void OnSClicked(object sender, EventArgs e)
+	{
+		List<Entry> firstRow = new List<Entry>() { oneOne, twoOne, threeOne, fourOne, fiveOne };
+		List<Entry> secondRow = new List<Entry>() { oneTwo, twoTwo, threeTwo, fourTwo, fiveTwo };
+		List<Entry> thirdRow = new List<Entry>() { oneThree, twoThree, threeThree, fourThree, fiveThree };
+		List<Entry> fourthRow = new List<Entry>() { oneFour, twoFour, threeFour, fourFour, fiveFour };
+		List<Entry> fifthRow = new List<Entry>() { oneFive, twoFive, threeFive, fourFive, fiveFive };
+		List<Entry> sixthRow = new List<Entry>() { oneSix, twoSix, threeSix, fourSix, fiveSix };
+
+		if (!firstFilled)
+		{
+			for (int i = 0; i < firstRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(firstRow[i].Text.ToString()))
+				{
+					firstRow[i].Text = "S";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && !secondFilled)
+		{
+			for (int i = 0; i < secondRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(secondRow[i].Text.ToString()))
+				{
+					secondRow[i].Text = "S";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && !thirdFilled)
+		{
+			for (int i = 0; i < thirdRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(thirdRow[i].Text.ToString()))
+				{
+					thirdRow[i].Text = "S";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && thirdFilled && !fourthFilled)
+		{
+			for (int i = 0; i < fourthRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(fourthRow[i].Text.ToString()))
+				{
+					fourthRow[i].Text = "S";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && thirdFilled && fourthFilled && !fifthFilled)
+		{
+			for (int i = 0; i < fifthRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(fifthRow[i].Text.ToString()))
+				{
+					fifthRow[i].Text = "S";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && thirdFilled && fourthFilled && fifthFilled && !sixthFilled)
+		{
+			for (int i = 0; i < sixthRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(sixthRow[i].Text.ToString()))
+				{
+					sixthRow[i].Text = "S";
+					break;
+				}
+			}
+		}
+	} // End method S
+
+
+	private void OnDClicked(object sender, EventArgs e)
+	{
+		List<Entry> firstRow = new List<Entry>() { oneOne, twoOne, threeOne, fourOne, fiveOne };
+		List<Entry> secondRow = new List<Entry>() { oneTwo, twoTwo, threeTwo, fourTwo, fiveTwo };
+		List<Entry> thirdRow = new List<Entry>() { oneThree, twoThree, threeThree, fourThree, fiveThree };
+		List<Entry> fourthRow = new List<Entry>() { oneFour, twoFour, threeFour, fourFour, fiveFour };
+		List<Entry> fifthRow = new List<Entry>() { oneFive, twoFive, threeFive, fourFive, fiveFive };
+		List<Entry> sixthRow = new List<Entry>() { oneSix, twoSix, threeSix, fourSix, fiveSix };
+
+		if (!firstFilled)
+		{
+			for (int i = 0; i < firstRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(firstRow[i].Text.ToString()))
+				{
+					firstRow[i].Text = "D";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && !secondFilled)
+		{
+			for (int i = 0; i < secondRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(secondRow[i].Text.ToString()))
+				{
+					secondRow[i].Text = "D";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && !thirdFilled)
+		{
+			for (int i = 0; i < thirdRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(thirdRow[i].Text.ToString()))
+				{
+					thirdRow[i].Text = "D";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && thirdFilled && !fourthFilled)
+		{
+			for (int i = 0; i < fourthRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(fourthRow[i].Text.ToString()))
+				{
+					fourthRow[i].Text = "D";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && thirdFilled && fourthFilled && !fifthFilled)
+		{
+			for (int i = 0; i < fifthRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(fifthRow[i].Text.ToString()))
+				{
+					fifthRow[i].Text = "D";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && thirdFilled && fourthFilled && fifthFilled && !sixthFilled)
+		{
+			for (int i = 0; i < sixthRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(sixthRow[i].Text.ToString()))
+				{
+					sixthRow[i].Text = "D";
+					break;
+				}
+			}
+		}
+	} // End method D
+
+	private void OnFClicked(object sender, EventArgs e)
+	{
+		List<Entry> firstRow = new List<Entry>() { oneOne, twoOne, threeOne, fourOne, fiveOne };
+		List<Entry> secondRow = new List<Entry>() { oneTwo, twoTwo, threeTwo, fourTwo, fiveTwo };
+		List<Entry> thirdRow = new List<Entry>() { oneThree, twoThree, threeThree, fourThree, fiveThree };
+		List<Entry> fourthRow = new List<Entry>() { oneFour, twoFour, threeFour, fourFour, fiveFour };
+		List<Entry> fifthRow = new List<Entry>() { oneFive, twoFive, threeFive, fourFive, fiveFive };
+		List<Entry> sixthRow = new List<Entry>() { oneSix, twoSix, threeSix, fourSix, fiveSix };
+
+		if (!firstFilled)
+		{
+			for (int i = 0; i < firstRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(firstRow[i].Text.ToString()))
+				{
+					firstRow[i].Text = "F";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && !secondFilled)
+		{
+			for (int i = 0; i < secondRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(secondRow[i].Text.ToString()))
+				{
+					secondRow[i].Text = "F";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && !thirdFilled)
+		{
+			for (int i = 0; i < thirdRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(thirdRow[i].Text.ToString()))
+				{
+					thirdRow[i].Text = "F";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && thirdFilled && !fourthFilled)
+		{
+			for (int i = 0; i < fourthRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(fourthRow[i].Text.ToString()))
+				{
+					fourthRow[i].Text = "F";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && thirdFilled && fourthFilled && !fifthFilled)
+		{
+			for (int i = 0; i < fifthRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(fifthRow[i].Text.ToString()))
+				{
+					fifthRow[i].Text = "F";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && thirdFilled && fourthFilled && fifthFilled && !sixthFilled)
+		{
+			for (int i = 0; i < sixthRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(sixthRow[i].Text.ToString()))
+				{
+					sixthRow[i].Text = "F";
+					break;
+				}
+			}
+		}
+	} // End method F
+
+	private void OnGClicked(object sender, EventArgs e)
+	{
+		List<Entry> firstRow = new List<Entry>() { oneOne, twoOne, threeOne, fourOne, fiveOne };
+		List<Entry> secondRow = new List<Entry>() { oneTwo, twoTwo, threeTwo, fourTwo, fiveTwo };
+		List<Entry> thirdRow = new List<Entry>() { oneThree, twoThree, threeThree, fourThree, fiveThree };
+		List<Entry> fourthRow = new List<Entry>() { oneFour, twoFour, threeFour, fourFour, fiveFour };
+		List<Entry> fifthRow = new List<Entry>() { oneFive, twoFive, threeFive, fourFive, fiveFive };
+		List<Entry> sixthRow = new List<Entry>() { oneSix, twoSix, threeSix, fourSix, fiveSix };
+
+		if (!firstFilled)
+		{
+			for (int i = 0; i < firstRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(firstRow[i].Text.ToString()))
+				{
+					firstRow[i].Text = "G";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && !secondFilled)
+		{
+			for (int i = 0; i < secondRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(secondRow[i].Text.ToString()))
+				{
+					secondRow[i].Text = "G";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && !thirdFilled)
+		{
+			for (int i = 0; i < thirdRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(thirdRow[i].Text.ToString()))
+				{
+					thirdRow[i].Text = "G";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && thirdFilled && !fourthFilled)
+		{
+			for (int i = 0; i < fourthRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(fourthRow[i].Text.ToString()))
+				{
+					fourthRow[i].Text = "G";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && thirdFilled && fourthFilled && !fifthFilled)
+		{
+			for (int i = 0; i < fifthRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(fifthRow[i].Text.ToString()))
+				{
+					fifthRow[i].Text = "G";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && thirdFilled && fourthFilled && fifthFilled && !sixthFilled)
+		{
+			for (int i = 0; i < sixthRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(sixthRow[i].Text.ToString()))
+				{
+					sixthRow[i].Text = "G";
+					break;
+				}
+			}
+		}
+	} // End method G
+
+	private void OnHClicked(object sender, EventArgs e)
+	{
+		List<Entry> firstRow = new List<Entry>() { oneOne, twoOne, threeOne, fourOne, fiveOne };
+		List<Entry> secondRow = new List<Entry>() { oneTwo, twoTwo, threeTwo, fourTwo, fiveTwo };
+		List<Entry> thirdRow = new List<Entry>() { oneThree, twoThree, threeThree, fourThree, fiveThree };
+		List<Entry> fourthRow = new List<Entry>() { oneFour, twoFour, threeFour, fourFour, fiveFour };
+		List<Entry> fifthRow = new List<Entry>() { oneFive, twoFive, threeFive, fourFive, fiveFive };
+		List<Entry> sixthRow = new List<Entry>() { oneSix, twoSix, threeSix, fourSix, fiveSix };
+
+		if (!firstFilled)
+		{
+			for (int i = 0; i < firstRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(firstRow[i].Text.ToString()))
+				{
+					firstRow[i].Text = "H";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && !secondFilled)
+		{
+			for (int i = 0; i < secondRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(secondRow[i].Text.ToString()))
+				{
+					secondRow[i].Text = "H";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && !thirdFilled)
+		{
+			for (int i = 0; i < thirdRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(thirdRow[i].Text.ToString()))
+				{
+					thirdRow[i].Text = "H";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && thirdFilled && !fourthFilled)
+		{
+			for (int i = 0; i < fourthRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(fourthRow[i].Text.ToString()))
+				{
+					fourthRow[i].Text = "H";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && thirdFilled && fourthFilled && !fifthFilled)
+		{
+			for (int i = 0; i < fifthRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(fifthRow[i].Text.ToString()))
+				{
+					fifthRow[i].Text = "H";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && thirdFilled && fourthFilled && fifthFilled && !sixthFilled)
+		{
+			for (int i = 0; i < sixthRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(sixthRow[i].Text.ToString()))
+				{
+					sixthRow[i].Text = "H";
+					break;
+				}
+			}
+		}
+	} // End method H
+
+	private void OnJClicked(object sender, EventArgs e)
+	{
+		List<Entry> firstRow = new List<Entry>() { oneOne, twoOne, threeOne, fourOne, fiveOne };
+		List<Entry> secondRow = new List<Entry>() { oneTwo, twoTwo, threeTwo, fourTwo, fiveTwo };
+		List<Entry> thirdRow = new List<Entry>() { oneThree, twoThree, threeThree, fourThree, fiveThree };
+		List<Entry> fourthRow = new List<Entry>() { oneFour, twoFour, threeFour, fourFour, fiveFour };
+		List<Entry> fifthRow = new List<Entry>() { oneFive, twoFive, threeFive, fourFive, fiveFive };
+		List<Entry> sixthRow = new List<Entry>() { oneSix, twoSix, threeSix, fourSix, fiveSix };
+
+		if (!firstFilled)
+		{
+			for (int i = 0; i < firstRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(firstRow[i].Text.ToString()))
+				{
+					firstRow[i].Text = "J";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && !secondFilled)
+		{
+			for (int i = 0; i < secondRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(secondRow[i].Text.ToString()))
+				{
+					secondRow[i].Text = "J";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && !thirdFilled)
+		{
+			for (int i = 0; i < thirdRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(thirdRow[i].Text.ToString()))
+				{
+					thirdRow[i].Text = "J";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && thirdFilled && !fourthFilled)
+		{
+			for (int i = 0; i < fourthRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(fourthRow[i].Text.ToString()))
+				{
+					fourthRow[i].Text = "J";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && thirdFilled && fourthFilled && !fifthFilled)
+		{
+			for (int i = 0; i < fifthRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(fifthRow[i].Text.ToString()))
+				{
+					fifthRow[i].Text = "J";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && thirdFilled && fourthFilled && fifthFilled && !sixthFilled)
+		{
+			for (int i = 0; i < sixthRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(sixthRow[i].Text.ToString()))
+				{
+					sixthRow[i].Text = "J";
+					break;
+				}
+			}
+		}
+	} // End method J
+
+	private void OnKClicked(object sender, EventArgs e)
+	{
+		List<Entry> firstRow = new List<Entry>() { oneOne, twoOne, threeOne, fourOne, fiveOne };
+		List<Entry> secondRow = new List<Entry>() { oneTwo, twoTwo, threeTwo, fourTwo, fiveTwo };
+		List<Entry> thirdRow = new List<Entry>() { oneThree, twoThree, threeThree, fourThree, fiveThree };
+		List<Entry> fourthRow = new List<Entry>() { oneFour, twoFour, threeFour, fourFour, fiveFour };
+		List<Entry> fifthRow = new List<Entry>() { oneFive, twoFive, threeFive, fourFive, fiveFive };
+		List<Entry> sixthRow = new List<Entry>() { oneSix, twoSix, threeSix, fourSix, fiveSix };
+
+		if (!firstFilled)
+		{
+			for (int i = 0; i < firstRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(firstRow[i].Text.ToString()))
+				{
+					firstRow[i].Text = "K";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && !secondFilled)
+		{
+			for (int i = 0; i < secondRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(secondRow[i].Text.ToString()))
+				{
+					secondRow[i].Text = "K";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && !thirdFilled)
+		{
+			for (int i = 0; i < thirdRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(thirdRow[i].Text.ToString()))
+				{
+					thirdRow[i].Text = "K";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && thirdFilled && !fourthFilled)
+		{
+			for (int i = 0; i < fourthRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(fourthRow[i].Text.ToString()))
+				{
+					fourthRow[i].Text = "K";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && thirdFilled && fourthFilled && !fifthFilled)
+		{
+			for (int i = 0; i < fifthRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(fifthRow[i].Text.ToString()))
+				{
+					fifthRow[i].Text = "K";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && thirdFilled && fourthFilled && fifthFilled && !sixthFilled)
+		{
+			for (int i = 0; i < sixthRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(sixthRow[i].Text.ToString()))
+				{
+					sixthRow[i].Text = "K";
+					break;
+				}
+			}
+		}
+	} // End method K
+
+	private void OnLClicked(object sender, EventArgs e)
+	{
+		List<Entry> firstRow = new List<Entry>() { oneOne, twoOne, threeOne, fourOne, fiveOne };
+		List<Entry> secondRow = new List<Entry>() { oneTwo, twoTwo, threeTwo, fourTwo, fiveTwo };
+		List<Entry> thirdRow = new List<Entry>() { oneThree, twoThree, threeThree, fourThree, fiveThree };
+		List<Entry> fourthRow = new List<Entry>() { oneFour, twoFour, threeFour, fourFour, fiveFour };
+		List<Entry> fifthRow = new List<Entry>() { oneFive, twoFive, threeFive, fourFive, fiveFive };
+		List<Entry> sixthRow = new List<Entry>() { oneSix, twoSix, threeSix, fourSix, fiveSix };
+
+		if (!firstFilled)
+		{
+			for (int i = 0; i < firstRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(firstRow[i].Text.ToString()))
+				{
+					firstRow[i].Text = "L";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && !secondFilled)
+		{
+			for (int i = 0; i < secondRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(secondRow[i].Text.ToString()))
+				{
+					secondRow[i].Text = "L";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && !thirdFilled)
+		{
+			for (int i = 0; i < thirdRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(thirdRow[i].Text.ToString()))
+				{
+					thirdRow[i].Text = "L";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && thirdFilled && !fourthFilled)
+		{
+			for (int i = 0; i < fourthRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(fourthRow[i].Text.ToString()))
+				{
+					fourthRow[i].Text = "L";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && thirdFilled && fourthFilled && !fifthFilled)
+		{
+			for (int i = 0; i < fifthRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(fifthRow[i].Text.ToString()))
+				{
+					fifthRow[i].Text = "L";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && thirdFilled && fourthFilled && fifthFilled && !sixthFilled)
+		{
+			for (int i = 0; i < sixthRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(sixthRow[i].Text.ToString()))
+				{
+					sixthRow[i].Text = "L";
+					break;
+				}
+			}
+		}
+	} // End method L
+
+	private void OnZClicked(object sender, EventArgs e)
+	{
+		List<Entry> firstRow = new List<Entry>() { oneOne, twoOne, threeOne, fourOne, fiveOne };
+		List<Entry> secondRow = new List<Entry>() { oneTwo, twoTwo, threeTwo, fourTwo, fiveTwo };
+		List<Entry> thirdRow = new List<Entry>() { oneThree, twoThree, threeThree, fourThree, fiveThree };
+		List<Entry> fourthRow = new List<Entry>() { oneFour, twoFour, threeFour, fourFour, fiveFour };
+		List<Entry> fifthRow = new List<Entry>() { oneFive, twoFive, threeFive, fourFive, fiveFive };
+		List<Entry> sixthRow = new List<Entry>() { oneSix, twoSix, threeSix, fourSix, fiveSix };
+
+		if (!firstFilled)
+		{
+			for (int i = 0; i < firstRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(firstRow[i].Text.ToString()))
+				{
+					firstRow[i].Text = "Z";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && !secondFilled)
+		{
+			for (int i = 0; i < secondRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(secondRow[i].Text.ToString()))
+				{
+					secondRow[i].Text = "Z";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && !thirdFilled)
+		{
+			for (int i = 0; i < thirdRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(thirdRow[i].Text.ToString()))
+				{
+					thirdRow[i].Text = "Z";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && thirdFilled && !fourthFilled)
+		{
+			for (int i = 0; i < fourthRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(fourthRow[i].Text.ToString()))
+				{
+					fourthRow[i].Text = "Z";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && thirdFilled && fourthFilled && !fifthFilled)
+		{
+			for (int i = 0; i < fifthRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(fifthRow[i].Text.ToString()))
+				{
+					fifthRow[i].Text = "Z";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && thirdFilled && fourthFilled && fifthFilled && !sixthFilled)
+		{
+			for (int i = 0; i < sixthRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(sixthRow[i].Text.ToString()))
+				{
+					sixthRow[i].Text = "Z";
+					break;
+				}
+			}
+		}
+	} // End method Z
+
+	private void OnXClicked(object sender, EventArgs e)
+	{
+		List<Entry> firstRow = new List<Entry>() { oneOne, twoOne, threeOne, fourOne, fiveOne };
+		List<Entry> secondRow = new List<Entry>() { oneTwo, twoTwo, threeTwo, fourTwo, fiveTwo };
+		List<Entry> thirdRow = new List<Entry>() { oneThree, twoThree, threeThree, fourThree, fiveThree };
+		List<Entry> fourthRow = new List<Entry>() { oneFour, twoFour, threeFour, fourFour, fiveFour };
+		List<Entry> fifthRow = new List<Entry>() { oneFive, twoFive, threeFive, fourFive, fiveFive };
+		List<Entry> sixthRow = new List<Entry>() { oneSix, twoSix, threeSix, fourSix, fiveSix };
+
+		if (!firstFilled)
+		{
+			for (int i = 0; i < firstRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(firstRow[i].Text.ToString()))
+				{
+					firstRow[i].Text = "X";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && !secondFilled)
+		{
+			for (int i = 0; i < secondRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(secondRow[i].Text.ToString()))
+				{
+					secondRow[i].Text = "X";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && !thirdFilled)
+		{
+			for (int i = 0; i < thirdRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(thirdRow[i].Text.ToString()))
+				{
+					thirdRow[i].Text = "X";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && thirdFilled && !fourthFilled)
+		{
+			for (int i = 0; i < fourthRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(fourthRow[i].Text.ToString()))
+				{
+					fourthRow[i].Text = "X";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && thirdFilled && fourthFilled && !fifthFilled)
+		{
+			for (int i = 0; i < fifthRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(fifthRow[i].Text.ToString()))
+				{
+					fifthRow[i].Text = "X";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && thirdFilled && fourthFilled && fifthFilled && !sixthFilled)
+		{
+			for (int i = 0; i < sixthRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(sixthRow[i].Text.ToString()))
+				{
+					sixthRow[i].Text = "X";
+					break;
+				}
+			}
+		}
+	} // End method X
+
+	private void OnCClicked(object sender, EventArgs e)
+	{
+		List<Entry> firstRow = new List<Entry>() { oneOne, twoOne, threeOne, fourOne, fiveOne };
+		List<Entry> secondRow = new List<Entry>() { oneTwo, twoTwo, threeTwo, fourTwo, fiveTwo };
+		List<Entry> thirdRow = new List<Entry>() { oneThree, twoThree, threeThree, fourThree, fiveThree };
+		List<Entry> fourthRow = new List<Entry>() { oneFour, twoFour, threeFour, fourFour, fiveFour };
+		List<Entry> fifthRow = new List<Entry>() { oneFive, twoFive, threeFive, fourFive, fiveFive };
+		List<Entry> sixthRow = new List<Entry>() { oneSix, twoSix, threeSix, fourSix, fiveSix };
+
+		if (!firstFilled)
+		{
+			for (int i = 0; i < firstRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(firstRow[i].Text.ToString()))
+				{
+					firstRow[i].Text = "C";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && !secondFilled)
+		{
+			for (int i = 0; i < secondRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(secondRow[i].Text.ToString()))
+				{
+					secondRow[i].Text = "C";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && !thirdFilled)
+		{
+			for (int i = 0; i < thirdRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(thirdRow[i].Text.ToString()))
+				{
+					thirdRow[i].Text = "C";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && thirdFilled && !fourthFilled)
+		{
+			for (int i = 0; i < fourthRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(fourthRow[i].Text.ToString()))
+				{
+					fourthRow[i].Text = "C";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && thirdFilled && fourthFilled && !fifthFilled)
+		{
+			for (int i = 0; i < fifthRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(fifthRow[i].Text.ToString()))
+				{
+					fifthRow[i].Text = "C";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && thirdFilled && fourthFilled && fifthFilled && !sixthFilled)
+		{
+			for (int i = 0; i < sixthRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(sixthRow[i].Text.ToString()))
+				{
+					sixthRow[i].Text = "C";
+					break;
+				}
+			}
+		}
+	} // End method C
+
+	private void OnVClicked(object sender, EventArgs e)
+	{
+		List<Entry> firstRow = new List<Entry>() { oneOne, twoOne, threeOne, fourOne, fiveOne };
+		List<Entry> secondRow = new List<Entry>() { oneTwo, twoTwo, threeTwo, fourTwo, fiveTwo };
+		List<Entry> thirdRow = new List<Entry>() { oneThree, twoThree, threeThree, fourThree, fiveThree };
+		List<Entry> fourthRow = new List<Entry>() { oneFour, twoFour, threeFour, fourFour, fiveFour };
+		List<Entry> fifthRow = new List<Entry>() { oneFive, twoFive, threeFive, fourFive, fiveFive };
+		List<Entry> sixthRow = new List<Entry>() { oneSix, twoSix, threeSix, fourSix, fiveSix };
+
+		if (!firstFilled)
+		{
+			for (int i = 0; i < firstRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(firstRow[i].Text.ToString()))
+				{
+					firstRow[i].Text = "V";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && !secondFilled)
+		{
+			for (int i = 0; i < secondRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(secondRow[i].Text.ToString()))
+				{
+					secondRow[i].Text = "V";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && !thirdFilled)
+		{
+			for (int i = 0; i < thirdRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(thirdRow[i].Text.ToString()))
+				{
+					thirdRow[i].Text = "V";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && thirdFilled && !fourthFilled)
+		{
+			for (int i = 0; i < fourthRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(fourthRow[i].Text.ToString()))
+				{
+					fourthRow[i].Text = "V";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && thirdFilled && fourthFilled && !fifthFilled)
+		{
+			for (int i = 0; i < fifthRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(fifthRow[i].Text.ToString()))
+				{
+					fifthRow[i].Text = "V";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && thirdFilled && fourthFilled && fifthFilled && !sixthFilled)
+		{
+			for (int i = 0; i < sixthRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(sixthRow[i].Text.ToString()))
+				{
+					sixthRow[i].Text = "V";
+					break;
+				}
+			}
+		}
+	} // End method V
+
+	private void OnBClicked(object sender, EventArgs e)
+	{
+		List<Entry> firstRow = new List<Entry>() { oneOne, twoOne, threeOne, fourOne, fiveOne };
+		List<Entry> secondRow = new List<Entry>() { oneTwo, twoTwo, threeTwo, fourTwo, fiveTwo };
+		List<Entry> thirdRow = new List<Entry>() { oneThree, twoThree, threeThree, fourThree, fiveThree };
+		List<Entry> fourthRow = new List<Entry>() { oneFour, twoFour, threeFour, fourFour, fiveFour };
+		List<Entry> fifthRow = new List<Entry>() { oneFive, twoFive, threeFive, fourFive, fiveFive };
+		List<Entry> sixthRow = new List<Entry>() { oneSix, twoSix, threeSix, fourSix, fiveSix };
+
+		if (!firstFilled)
+		{
+			for (int i = 0; i < firstRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(firstRow[i].Text.ToString()))
+				{
+					firstRow[i].Text = "B";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && !secondFilled)
+		{
+			for (int i = 0; i < secondRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(secondRow[i].Text.ToString()))
+				{
+					secondRow[i].Text = "B";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && !thirdFilled)
+		{
+			for (int i = 0; i < thirdRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(thirdRow[i].Text.ToString()))
+				{
+					thirdRow[i].Text = "B";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && thirdFilled && !fourthFilled)
+		{
+			for (int i = 0; i < fourthRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(fourthRow[i].Text.ToString()))
+				{
+					fourthRow[i].Text = "B";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && thirdFilled && fourthFilled && !fifthFilled)
+		{
+			for (int i = 0; i < fifthRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(fifthRow[i].Text.ToString()))
+				{
+					fifthRow[i].Text = "B";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && thirdFilled && fourthFilled && fifthFilled && !sixthFilled)
+		{
+			for (int i = 0; i < sixthRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(sixthRow[i].Text.ToString()))
+				{
+					sixthRow[i].Text = "B";
+					break;
+				}
+			}
+		}
+	} // End method B
+
+	private void OnNClicked(object sender, EventArgs e)
+	{
+		List<Entry> firstRow = new List<Entry>() { oneOne, twoOne, threeOne, fourOne, fiveOne };
+		List<Entry> secondRow = new List<Entry>() { oneTwo, twoTwo, threeTwo, fourTwo, fiveTwo };
+		List<Entry> thirdRow = new List<Entry>() { oneThree, twoThree, threeThree, fourThree, fiveThree };
+		List<Entry> fourthRow = new List<Entry>() { oneFour, twoFour, threeFour, fourFour, fiveFour };
+		List<Entry> fifthRow = new List<Entry>() { oneFive, twoFive, threeFive, fourFive, fiveFive };
+		List<Entry> sixthRow = new List<Entry>() { oneSix, twoSix, threeSix, fourSix, fiveSix };
+
+		if (!firstFilled)
+		{
+			for (int i = 0; i < firstRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(firstRow[i].Text.ToString()))
+				{
+					firstRow[i].Text = "N";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && !secondFilled)
+		{
+			for (int i = 0; i < secondRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(secondRow[i].Text.ToString()))
+				{
+					secondRow[i].Text = "N";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && !thirdFilled)
+		{
+			for (int i = 0; i < thirdRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(thirdRow[i].Text.ToString()))
+				{
+					thirdRow[i].Text = "N";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && thirdFilled && !fourthFilled)
+		{
+			for (int i = 0; i < fourthRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(fourthRow[i].Text.ToString()))
+				{
+					fourthRow[i].Text = "N";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && thirdFilled && fourthFilled && !fifthFilled)
+		{
+			for (int i = 0; i < fifthRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(fifthRow[i].Text.ToString()))
+				{
+					fifthRow[i].Text = "N";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && thirdFilled && fourthFilled && fifthFilled && !sixthFilled)
+		{
+			for (int i = 0; i < sixthRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(sixthRow[i].Text.ToString()))
+				{
+					sixthRow[i].Text = "N";
+					break;
+				}
+			}
+		}
+	} // End method N
+
+	private void OnMClicked(object sender, EventArgs e)
+	{
+		List<Entry> firstRow = new List<Entry>() { oneOne, twoOne, threeOne, fourOne, fiveOne };
+		List<Entry> secondRow = new List<Entry>() { oneTwo, twoTwo, threeTwo, fourTwo, fiveTwo };
+		List<Entry> thirdRow = new List<Entry>() { oneThree, twoThree, threeThree, fourThree, fiveThree };
+		List<Entry> fourthRow = new List<Entry>() { oneFour, twoFour, threeFour, fourFour, fiveFour };
+		List<Entry> fifthRow = new List<Entry>() { oneFive, twoFive, threeFive, fourFive, fiveFive };
+		List<Entry> sixthRow = new List<Entry>() { oneSix, twoSix, threeSix, fourSix, fiveSix };
+
+		if (!firstFilled)
+		{
+			for (int i = 0; i < firstRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(firstRow[i].Text.ToString()))
+				{
+					firstRow[i].Text = "M";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && !secondFilled)
+		{
+			for (int i = 0; i < secondRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(secondRow[i].Text.ToString()))
+				{
+					secondRow[i].Text = "M";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && !thirdFilled)
+		{
+			for (int i = 0; i < thirdRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(thirdRow[i].Text.ToString()))
+				{
+					thirdRow[i].Text = "M";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && thirdFilled && !fourthFilled)
+		{
+			for (int i = 0; i < fourthRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(fourthRow[i].Text.ToString()))
+				{
+					fourthRow[i].Text = "M";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && thirdFilled && fourthFilled && !fifthFilled)
+		{
+			for (int i = 0; i < fifthRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(fifthRow[i].Text.ToString()))
+				{
+					fifthRow[i].Text = "M";
+					break;
+				}
+			}
+		}
+		else if (firstFilled && secondFilled && thirdFilled && fourthFilled && fifthFilled && !sixthFilled)
+		{
+			for (int i = 0; i < sixthRow.Count; i++)
+			{
+				if (String.IsNullOrEmpty(sixthRow[i].Text.ToString()))
+				{
+					sixthRow[i].Text = "M";
+					break;
+				}
+			}
+		}
+	} // End method M
+
+	private void OnDeleteClicked(object sender, EventArgs e)
+	{
+
+	}
+
 }
 
