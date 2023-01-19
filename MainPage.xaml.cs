@@ -2062,5 +2062,89 @@ public partial class MainPage : ContentPage
 
 	}
 
+	private async void OnEnterClicked(object sender, EventArgs e)
+	{
+		List<Entry> firstRow = new List<Entry>() { oneOne, twoOne, threeOne, fourOne, fiveOne };
+		List<Entry> secondRow = new List<Entry>() { oneTwo, twoTwo, threeTwo, fourTwo, fiveTwo };
+		List<Entry> thirdRow = new List<Entry>() { oneThree, twoThree, threeThree, fourThree, fiveThree };
+		List<Entry> fourthRow = new List<Entry>() { oneFour, twoFour, threeFour, fourFour, fiveFour };
+		List<Entry> fifthRow = new List<Entry>() { oneFive, twoFive, threeFive, fourFive, fiveFive };
+		List<Entry> sixthRow = new List<Entry>() { oneSix, twoSix, threeSix, fourSix, fiveSix };
+
+		if (!firstFilled)
+		{
+			foreach (Entry entry in firstRow)
+			{
+				if (String.IsNullOrEmpty(entry.Text))
+				{
+					await DisplayAlert("Attention: you haven't filled out every possible character in this row", "Please enter more characters now", "Thank you");
+					return;
+				}
+			}
+			firstFilled = true;
+		}
+		else if (firstFilled && !secondFilled)
+		{
+			foreach (Entry entry in secondRow)
+			{
+				if (String.IsNullOrEmpty(entry.Text))
+				{
+					await DisplayAlert("Attention: you haven't filled out every possible character in this row", "Please enter more characters now", "Thank you");
+					return;
+				}
+			}
+			secondFilled = true;
+		}
+		else if (secondFilled && !thirdFilled)
+		{
+			foreach (Entry entry in thirdRow)
+			{
+				if (String.IsNullOrEmpty(entry.Text))
+				{
+					await DisplayAlert("Attention: you haven't filled out every possible character in this row", "Please enter more characters now", "Thank you");
+					return;
+				}
+			}
+			thirdFilled = true;
+		}
+		else if (thirdFilled && !fourthFilled)
+		{
+			foreach (Entry entry in fourthRow)
+			{
+				if (String.IsNullOrEmpty(entry.Text))
+				{
+					await DisplayAlert("Attention: you haven't filled out every possible character in this row", "Please enter more characters now", "Thank you");
+					return;
+				}
+			}
+			fourthFilled = true;
+		}
+
+		else if (fourthFilled && !fifthFilled)
+		{
+			foreach (Entry entry in fifthRow)
+			{
+				if (String.IsNullOrEmpty(entry.Text))
+				{
+					await DisplayAlert("Attention: you haven't filled out every possible character in this row", "Please enter more characters now", "Thank you");
+					return;
+				}
+			}
+			fifthFilled = true;
+		}
+		else if (fifthFilled && !sixthFilled)
+		{
+			foreach (Entry entry in sixthRow)
+			{
+				if (String.IsNullOrEmpty(entry.Text))
+				{
+					await DisplayAlert("Attention: you haven't filled out every possible character in this row", "Please enter more characters now", "Thank you");
+					return;
+				}
+			}
+			sixthFilled = true;
+		}
+	}
+
 }
 

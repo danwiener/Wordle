@@ -89,7 +89,7 @@
                 <Button x:Name="jButton" Clicked="OnJClicked" Text="J" TextColor="#6B98BF" BackgroundColor="Transparent" HeightRequest="65" WidthRequest="65" Margin="10, 0, 10, 0" FontFamily="myriad" FontAttributes="Bold" FontSize="20"/>
                 <Button x:Name="kButton" Clicked="OnKClicked" Text="K" TextColor="#6B98BF" BackgroundColor="Transparent" HeightRequest="65" WidthRequest="65" Margin="10, 0, 10, 0" FontFamily="myriad" FontAttributes="Bold" FontSize="20"/>
                 <Button x:Name="lButton" Clicked="OnLClicked" Text="L" TextColor="#6B98BF" BackgroundColor="Transparent" HeightRequest="65" WidthRequest="65" Margin="10, 0, 10, 0" FontFamily="myriad" FontAttributes="Bold" FontSize="20"/>
-                <Button x:Name="enterButton" Text="ENTER" TextColor="#6B98BF" BackgroundColor="Transparent" HeightRequest="65" WidthRequest="130" Margin="10, 0, 10, 0" FontFamily="myriad" FontAttributes="Bold" FontSize="16"/>
+                <Button x:Name="enterButton" Clicked="OnEnterClicked" Text="ENTER" TextColor="#6B98BF" BackgroundColor="Transparent" HeightRequest="65" WidthRequest="130" Margin="10, 0, 10, 0" FontFamily="myriad" FontAttributes="Bold" FontSize="16"/>
             </HorizontalStackLayout>
             <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Start" Grid.Row="2" Margin="0, 10, 0, 10">
                 <Button x:Name="zButton" Clicked="OnZClicked" Text="Z" TextColor="#6B98BF" BackgroundColor="Transparent" HeightRequest="65" WidthRequest="65" Margin="10, 0, 10, 0" FontFamily="myriad" FontAttributes="Bold" FontSize="20"/>
