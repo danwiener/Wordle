@@ -2059,7 +2059,79 @@ public partial class MainPage : ContentPage
 
 	private void OnDeleteClicked(object sender, EventArgs e)
 	{
+		List<Entry> firstRow = new List<Entry>() { oneOne, twoOne, threeOne, fourOne, fiveOne };
+		List<Entry> secondRow = new List<Entry>() { oneTwo, twoTwo, threeTwo, fourTwo, fiveTwo };
+		List<Entry> thirdRow = new List<Entry>() { oneThree, twoThree, threeThree, fourThree, fiveThree };
+		List<Entry> fourthRow = new List<Entry>() { oneFour, twoFour, threeFour, fourFour, fiveFour };
+		List<Entry> fifthRow = new List<Entry>() { oneFive, twoFive, threeFive, fourFive, fiveFive };
+		List<Entry> sixthRow = new List<Entry>() { oneSix, twoSix, threeSix, fourSix, fiveSix };
 
+		if (!firstFilled)
+		{
+			for (int i = firstRow.Count - 1; i >= 0; i--)
+			{
+				if (!string.IsNullOrEmpty(firstRow[i].Text))
+				{
+					firstRow[i].Text = string.Empty;
+					return;
+				}
+			}
+		}
+		else if (firstFilled && ! secondFilled)
+		{
+			for (int i = secondRow.Count - 1; i >= 0; i--)
+			{
+				if (!string.IsNullOrEmpty(secondRow[i].Text))
+				{
+					secondRow[i].Text = string.Empty;
+					return;
+				}
+			}
+		}
+		else if (secondFilled && !thirdFilled)
+		{
+			for (int i = thirdRow.Count - 1; i >= 0; i--)
+			{
+				if (!string.IsNullOrEmpty(thirdRow[i].Text))
+				{
+					thirdRow[i].Text = string.Empty;
+					return;
+				}
+			}
+		}
+		else if (thirdFilled && !fourthFilled)
+		{
+			for (int i = fourthRow.Count - 1; i >= 0; i--)
+			{
+				if (!string.IsNullOrEmpty(fourthRow[i].Text))
+				{
+					fourthRow[i].Text = string.Empty;
+					return;
+				}
+			}
+		}
+		else if (fourthFilled && !fifthFilled)
+		{
+			for (int i = fifthRow.Count - 1; i >= 0; i--)
+			{
+				if (!string.IsNullOrEmpty(fifthRow[i].Text))
+				{
+					fifthRow[i].Text = string.Empty;
+					return;
+				}
+			}
+		}
+		else if (fifthFilled && !sixthFilled)
+		{
+			for (int i = sixthRow.Count - 1; i >= 0; i--)
+			{
+				if (!string.IsNullOrEmpty(sixthRow[i].Text))
+				{
+					sixthRow[i].Text = string.Empty;
+					return;
+				}
+			}
+		}
 	}
 
 	private async void OnEnterClicked(object sender, EventArgs e)
