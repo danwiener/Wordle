@@ -17,46 +17,46 @@
                 <RowDefinition Height="85"/>
             </Grid.RowDefinitions>
             <HorizontalStackLayout x:Name="firstRow" Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Center">
-                <Entry WidthRequest="75" Text="" x:Name="oneOne" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0"/>
-                <Entry WidthRequest="75" Text="" x:Name="twoOne" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0"/>
-                <Entry WidthRequest="75" Text="" x:Name="threeOne" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0"/>
-                <Entry WidthRequest="75" Text="" x:Name="fourOne" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0"/>
-                <Entry WidthRequest="75" Text="" x:Name="fiveOne" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0"/>
+                <Entry WidthRequest="75" Text="" x:Name="oneOne" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0" FontSize="20"/>
+                <Entry WidthRequest="75" Text="" x:Name="twoOne" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0" FontSize="20"/>
+                <Entry WidthRequest="75" Text="" x:Name="threeOne" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0" FontSize="20"/>
+                <Entry WidthRequest="75" Text="" x:Name="fourOne" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0" FontSize="20"/>
+                <Entry WidthRequest="75" Text="" x:Name="fiveOne" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0" FontSize="20"/>
             </HorizontalStackLayout>
-            <HorizontalStackLayout x:Name="secondRow" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center">                                 
-                <Entry WidthRequest="75" Text="" x:Name="oneTwo" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0"/>
-                <Entry WidthRequest="75" Text="" x:Name="twoTwo" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0"/>
-                <Entry WidthRequest="75" Text="" x:Name="threeTwo" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0"/>
-                <Entry WidthRequest="75" Text="" x:Name="fourTwo" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0"/>
-                <Entry WidthRequest="75" Text="" x:Name="fiveTwo" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0"/>
+            <HorizontalStackLayout x:Name="secondRow" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center">
+                <Entry WidthRequest="75" Text="" x:Name="oneTwo" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0" FontSize="20"/>
+                <Entry WidthRequest="75" Text="" x:Name="twoTwo" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0" FontSize="20"/>
+                <Entry WidthRequest="75" Text="" x:Name="threeTwo" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0" FontSize="20"/>
+                <Entry WidthRequest="75" Text="" x:Name="fourTwo" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0" FontSize="20"/>
+                <Entry WidthRequest="75" Text="" x:Name="fiveTwo" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0" FontSize="20"/>
             </HorizontalStackLayout>
-            <HorizontalStackLayout x:Name="thirdRow" Grid.Row="2" HorizontalOptions="Center" VerticalOptions="Center">                                 
-                <Entry WidthRequest="75" Text="" x:Name="oneThree" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0"/>
-                <Entry WidthRequest="75" Text="" x:Name="twoThree" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0"/>
-                <Entry WidthRequest="75" Text="" x:Name="threeThree" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0"/>
-                <Entry WidthRequest="75" Text="" x:Name="fourThree" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0"/>
-                <Entry WidthRequest="75" Text="" x:Name="fiveThree" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0"/>
+            <HorizontalStackLayout x:Name="thirdRow" Grid.Row="2" HorizontalOptions="Center" VerticalOptions="Center">
+                <Entry WidthRequest="75" Text="" x:Name="oneThree" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0" FontSize="20"/>
+                <Entry WidthRequest="75" Text="" x:Name="twoThree" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0" FontSize="20"/>
+                <Entry WidthRequest="75" Text="" x:Name="threeThree" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0" FontSize="20"/>
+                <Entry WidthRequest="75" Text="" x:Name="fourThree" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0" FontSize="20"/>
+                <Entry WidthRequest="75" Text="" x:Name="fiveThree" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0" FontSize="20"/>
             </HorizontalStackLayout>
-            <HorizontalStackLayout x:Name="fourthRow" Grid.Row="3" HorizontalOptions="Center" VerticalOptions="Center" >                                 
-                <Entry WidthRequest="75" Text="" x:Name="oneFour" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0"/>
-                <Entry WidthRequest="75" Text="" x:Name="twoFour" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0"/>
-                <Entry WidthRequest="75" Text="" x:Name="threeFour" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0"/>
-                <Entry WidthRequest="75" Text="" x:Name="fourFour" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0"/>
-                <Entry WidthRequest="75" Text="" x:Name="fiveFour" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0"/>
+            <HorizontalStackLayout x:Name="fourthRow" Grid.Row="3" HorizontalOptions="Center" VerticalOptions="Center" >
+                <Entry WidthRequest="75" Text="" x:Name="oneFour" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0" FontSize="20"/>
+                <Entry WidthRequest="75" Text="" x:Name="twoFour" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0" FontSize="20"/>
+                <Entry WidthRequest="75" Text="" x:Name="threeFour" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0" FontSize="20"/>
+                <Entry WidthRequest="75" Text="" x:Name="fourFour" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0" FontSize="20"/>
+                <Entry WidthRequest="75" Text="" x:Name="fiveFour" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0" FontSize="20"/>
             </HorizontalStackLayout>
-            <HorizontalStackLayout x:Name="fifthRow" Grid.Row="4" HorizontalOptions="Center" VerticalOptions="Center">                                  
-                <Entry WidthRequest="75" Text="" x:Name="oneFive" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0"/>
-                <Entry WidthRequest="75" Text="" x:Name="twoFive" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0"/>
-                <Entry WidthRequest="75" Text="" x:Name="threeFive" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0"/>
-                <Entry WidthRequest="75" Text="" x:Name="fourFive" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0"/>
-                <Entry WidthRequest="75" Text="" x:Name="fiveFive" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0"/>
+            <HorizontalStackLayout x:Name="fifthRow" Grid.Row="4" HorizontalOptions="Center" VerticalOptions="Center">
+                <Entry WidthRequest="75" Text="" x:Name="oneFive" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0" FontSize="20"/>
+                <Entry WidthRequest="75" Text="" x:Name="twoFive" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0" FontSize="20"/>
+                <Entry WidthRequest="75" Text="" x:Name="threeFive" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0" FontSize="20"/>
+                <Entry WidthRequest="75" Text="" x:Name="fourFive" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0" FontSize="20"/>
+                <Entry WidthRequest="75" Text="" x:Name="fiveFive" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0" FontSize="20"/>
             </HorizontalStackLayout>
-            <HorizontalStackLayout x:Name="sixthRow" Grid.Row="5" HorizontalOptions="Center" VerticalOptions="Center">                               
-                <Entry WidthRequest="75" Text="" x:Name="oneSix" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0"/>
-                <Entry WidthRequest="75" Text="" x:Name="twoSix" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0"/>
-                <Entry WidthRequest="75" Text="" x:Name="threeSix" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0"/>
-                <Entry WidthRequest="75" Text="" x:Name="fourSix" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0"/>
-                <Entry WidthRequest="75" Text="" x:Name="fiveSix" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0"/>
+            <HorizontalStackLayout x:Name="sixthRow" Grid.Row="5" HorizontalOptions="Center" VerticalOptions="Center">
+                <Entry WidthRequest="75" Text="" x:Name="oneSix" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0" FontSize="20"/>
+                <Entry WidthRequest="75" Text="" x:Name="twoSix" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0" FontSize="20"/>
+                <Entry WidthRequest="75" Text="" x:Name="threeSix" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0" FontSize="20"/>
+                <Entry WidthRequest="75" Text="" x:Name="fourSix" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0" FontSize="20"/>
+                <Entry WidthRequest="75" Text="" x:Name="fiveSix" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#617C8C" Margin="10, 0, 10, 0" FontSize="20"/>
             </HorizontalStackLayout>                                                                                                                             
         </Grid>
         <Grid Grid.Row="3" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Start" Margin="0, -220, 0, 0">

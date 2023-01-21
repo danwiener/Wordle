@@ -1,4 +1,5 @@
 ﻿using System.Text;
+
 namespace Worlde;
 
 public partial class MainPage : ContentPage
@@ -2154,6 +2155,14 @@ public partial class MainPage : ContentPage
 				}
 			}
 			firstFilled = true;
+
+			// Append letters of each column to word
+			StringBuilder sb = new StringBuilder();
+			foreach (Entry entry in firstRow)
+			{
+				sb.Append(entry.Text);
+			}
+
 		}
 		else if (firstFilled && !secondFilled)
 		{
