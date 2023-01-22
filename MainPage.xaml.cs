@@ -35,25 +35,9 @@ public partial class MainPage : ContentPage
 	{
 		base.OnAppearing();
 
-		GenerateRandom:
-		Random rand = new Random();
-		int indexOfRandomWord = rand.Next(wordsToChoose.Length);
-		wordToGuess = wordsToChoose[indexOfRandomWord];
 
-		var client = new HttpClient();
-		var request = new HttpRequestMessage
-		{
-			Method = HttpMethod.Get,
-			RequestUri = new Uri($"https://api.dictionaryapi.dev/api/v2/entries/en/{wordToGuess}"),
-		};
-		using (var response = await client.SendAsync(request))
-		{
-			while (!response.IsSuccessStatusCode)
-			{
-				goto GenerateRandom;
-			}
-		}
-
+		ResetGame();
+		
 		oneTwo.IsEnabled = false;
 		twoTwo.IsEnabled = false;
 		threeTwo.IsEnabled = false;
@@ -2211,6 +2195,8 @@ public partial class MainPage : ContentPage
 		List<Entry> fifthRow = new List<Entry>() { oneFive, twoFive, threeFive, fourFive, fiveFive };
 		List<Entry> sixthRow = new List<Entry>() { oneSix, twoSix, threeSix, fourSix, fiveSix };
 
+		await DisplayAlert($"{wordToGuess}", "ok", "ok");
+
 		if (!firstFilled)
 		{
 			foreach (Entry entry in firstRow)
@@ -2245,7 +2231,7 @@ public partial class MainPage : ContentPage
 				}
 			}
 
-			if (sb.ToString() == wordToGuess)
+			if (sb.ToString().ToLower() == wordToGuess)
 			{
 				for (int i = 0; i < firstRow.Count; i++)
 				{
@@ -2266,9 +2252,9 @@ public partial class MainPage : ContentPage
 
 			for (int i = 0; i < sb.Length; i++)
 			{
-				if (wordToGuess.Contains(sb[i]))
+				if (wordToGuess.Contains(sb[i].ToString().ToLower()))
 				{
-					if (wordToGuess.IndexOf(sb[i]) == i)
+					if (wordToGuess.IndexOf(sb.ToString().ToLower()[i]) == i)
 					{
 						firstRow[i].BackgroundColor = Color.FromHex("#79A637");
 						firstRow[i].TextColor = Color.FromHex("#F2B749");
@@ -2283,6 +2269,7 @@ public partial class MainPage : ContentPage
 				}
 			}
 			firstFilled = true;
+			sb.Clear();
 		}
 		else if (firstFilled && !secondFilled)
 		{
@@ -2297,7 +2284,7 @@ public partial class MainPage : ContentPage
 
 			// Append letters of each column to word
 			StringBuilder sb = new StringBuilder();
-			foreach (Entry entry in firstRow)
+			foreach (Entry entry in secondRow)
 			{
 				sb.Append(entry.Text.ToLower());
 			}
@@ -2317,7 +2304,7 @@ public partial class MainPage : ContentPage
 				}
 			}
 
-			if (sb.ToString() == wordToGuess)
+			if (sb.ToString().ToLower() == wordToGuess)
 			{
 				for (int i = 0; i < secondRow.Count; i++)
 				{
@@ -2338,9 +2325,9 @@ public partial class MainPage : ContentPage
 
 			for (int i = 0; i < sb.Length; i++)
 			{
-				if (wordToGuess.Contains(sb[i]))
+				if (wordToGuess.Contains(sb[i].ToString().ToLower()))
 				{
-					if (wordToGuess.IndexOf(sb[i]) == i)
+					if (wordToGuess.IndexOf(sb.ToString().ToLower()[i]) == i)
 					{
 						secondRow[i].BackgroundColor = Color.FromHex("#79A637");
 						secondRow[i].TextColor = Color.FromHex("#F2B749");
@@ -2355,6 +2342,7 @@ public partial class MainPage : ContentPage
 				}
 			}
 			secondFilled = true;
+			sb.Clear();
 		}
 		else if (secondFilled && !thirdFilled)
 		{
@@ -2369,7 +2357,7 @@ public partial class MainPage : ContentPage
 
 			// Append letters of each column to word
 			StringBuilder sb = new StringBuilder();
-			foreach (Entry entry in firstRow)
+			foreach (Entry entry in thirdRow)
 			{
 				sb.Append(entry.Text.ToLower());
 			}
@@ -2389,7 +2377,7 @@ public partial class MainPage : ContentPage
 				}
 			}
 
-			if (sb.ToString() == wordToGuess)
+			if (sb.ToString().ToLower() == wordToGuess)
 				if (sb.ToString() == wordToGuess)
 				{
 					for (int i = 0; i < thirdRow.Count; i++)
@@ -2411,9 +2399,9 @@ public partial class MainPage : ContentPage
 
 			for (int i = 0; i < sb.Length; i++)
 			{
-				if (wordToGuess.Contains(sb[i]))
+				if (wordToGuess.Contains(sb[i].ToString().ToLower()))
 				{
-					if (wordToGuess.IndexOf(sb[i]) == i)
+					if (wordToGuess.IndexOf(sb.ToString().ToLower()[i]) == i)
 					{
 						thirdRow[i].BackgroundColor = Color.FromHex("#79A637");
 						thirdRow[i].TextColor = Color.FromHex("#F2B749");
@@ -2428,6 +2416,7 @@ public partial class MainPage : ContentPage
 				}
 			}
 			thirdFilled = true;
+			sb.Clear();
 		}
 		else if (thirdFilled && !fourthFilled)
 		{
@@ -2442,7 +2431,7 @@ public partial class MainPage : ContentPage
 
 			// Append letters of each column to word
 			StringBuilder sb = new StringBuilder();
-			foreach (Entry entry in firstRow)
+			foreach (Entry entry in fourthRow)
 			{
 				sb.Append(entry.Text.ToLower());
 			}
@@ -2462,7 +2451,7 @@ public partial class MainPage : ContentPage
 				}
 			}
 
-			if (sb.ToString() == wordToGuess)
+			if (sb.ToString().ToLower() == wordToGuess)
 				if (sb.ToString() == wordToGuess)
 				{
 					for (int i = 0; i < fourthRow.Count; i++)
@@ -2484,9 +2473,9 @@ public partial class MainPage : ContentPage
 
 			for (int i = 0; i < sb.Length; i++)
 			{
-				if (wordToGuess.Contains(sb[i]))
+				if (wordToGuess.Contains(sb[i].ToString().ToLower()))
 				{
-					if (wordToGuess.IndexOf(sb[i]) == i)
+					if (wordToGuess.IndexOf(sb.ToString().ToLower()[i]) == i)
 					{
 						fourthRow[i].BackgroundColor = Color.FromHex("#79A637");
 						fourthRow[i].TextColor = Color.FromHex("#F2B749");
@@ -2501,6 +2490,7 @@ public partial class MainPage : ContentPage
 				}
 			}
 			fourthFilled = true;
+			sb.Clear();
 		}
 
 		else if (fourthFilled && !fifthFilled)
@@ -2516,7 +2506,7 @@ public partial class MainPage : ContentPage
 
 			// Append letters of each column to word
 			StringBuilder sb = new StringBuilder();
-			foreach (Entry entry in firstRow)
+			foreach (Entry entry in fifthRow)
 			{
 				sb.Append(entry.Text.ToLower());
 			}
@@ -2536,7 +2526,7 @@ public partial class MainPage : ContentPage
 				}
 			}
 
-			if (sb.ToString() == wordToGuess)
+			if (sb.ToString().ToLower() == wordToGuess)
 				if (sb.ToString() == wordToGuess)
 				{
 					for (int i = 0; i < fifthRow.Count; i++)
@@ -2558,9 +2548,9 @@ public partial class MainPage : ContentPage
 
 			for (int i = 0; i < sb.Length; i++)
 			{
-				if (wordToGuess.Contains(sb[i]))
+				if (wordToGuess.Contains(sb[i].ToString().ToLower()))
 				{
-					if (wordToGuess.IndexOf(sb[i]) == i)
+					if (wordToGuess.IndexOf(sb.ToString().ToLower()[i]) == i)
 					{
 						fifthRow[i].BackgroundColor = Color.FromHex("#79A637");
 						fifthRow[i].TextColor = Color.FromHex("#F2B749");
@@ -2575,6 +2565,7 @@ public partial class MainPage : ContentPage
 				}
 			}
 			fifthFilled = true;
+			sb.Clear();
 		}
 		else if (fifthFilled && !sixthFilled)
 		{
@@ -2589,7 +2580,7 @@ public partial class MainPage : ContentPage
 
 			// Append letters of each column to word
 			StringBuilder sb = new StringBuilder();
-			foreach (Entry entry in firstRow)
+			foreach (Entry entry in sixthRow)
 			{
 				sb.Append(entry.Text.ToLower());
 			}
@@ -2609,7 +2600,7 @@ public partial class MainPage : ContentPage
 				}
 			}
 
-			if (sb.ToString() == wordToGuess)
+			if (sb.ToString().ToLower() == wordToGuess)
 				if (sb.ToString() == wordToGuess)
 				{
 					for (int i = 0; i < sixthRow.Count; i++)
@@ -2631,9 +2622,9 @@ public partial class MainPage : ContentPage
 
 			for (int i = 0; i < sb.Length; i++)
 			{
-				if (wordToGuess.Contains(sb[i]))
+				if (wordToGuess.Contains(sb[i].ToString().ToLower()))
 				{
-					if (wordToGuess.IndexOf(sb[i]) == i)
+					if (wordToGuess.IndexOf(sb.ToString().ToLower()[i]) == i)
 					{
 						sixthRow[i].BackgroundColor = Color.FromHex("#79A637");
 						sixthRow[i].TextColor = Color.FromHex("#F2B749");
@@ -2657,6 +2648,7 @@ public partial class MainPage : ContentPage
 			correctWordLabel2.Text = "Play again.";
 			enterButton.IsEnabled = false;
 			deleteButton.IsEnabled = false;
+			sb.Clear();
 			return;
 		}
 	}
