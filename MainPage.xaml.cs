@@ -2195,8 +2195,6 @@ public partial class MainPage : ContentPage
 		List<Entry> fifthRow = new List<Entry>() { oneFive, twoFive, threeFive, fourFive, fiveFive };
 		List<Entry> sixthRow = new List<Entry>() { oneSix, twoSix, threeSix, fourSix, fiveSix };
 
-		await DisplayAlert($"{wordToGuess}", "ok", "ok");
-
 		if (!firstFilled)
 		{
 			foreach (Entry entry in firstRow)
