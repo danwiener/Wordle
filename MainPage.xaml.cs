@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using Microsoft.Maui.Graphics;
+using System.Text;
 
 namespace Worlde;
 
@@ -16,6 +17,8 @@ public partial class MainPage : ContentPage
 	private bool fifthFilled;
 	private bool sixthFilled;
 
+	string wordToGuess; // The word that the user must correctly guess
+
 	public MainPage()
 	{
 		InitializeComponent();
@@ -28,13 +31,13 @@ public partial class MainPage : ContentPage
 
 	}
 
-	protected override void OnAppearing()
+	protected override async void OnAppearing()
 	{
 		base.OnAppearing();
 
 		Random rand = new Random();
 		int indexOfRandomWord = rand.Next(wordsToChoose.Length);
-		string wordToGuess = wordsToChoose[indexOfRandomWord];
+		wordToGuess = wordsToChoose[indexOfRandomWord];
 
 		oneTwo.IsEnabled = false;
 		twoTwo.IsEnabled = false;
@@ -748,8 +751,9 @@ public partial class MainPage : ContentPage
 		}
 	} // End method O
 
-	private void OnPClicked(object sender, EventArgs e)
+	private async void OnPClicked(object sender, EventArgs e)
 	{
+		await DisplayAlert($"{wordToGuess}", "ok", "ok");
 		List<Entry> firstRow = new List<Entry>() { oneOne, twoOne, threeOne, fourOne, fiveOne };
 		List<Entry> secondRow = new List<Entry>() { oneTwo, twoTwo, threeTwo, fourTwo, fiveTwo };
 		List<Entry> thirdRow = new List<Entry>() { oneThree, twoThree, threeThree, fourThree, fiveThree };
@@ -2154,15 +2158,58 @@ public partial class MainPage : ContentPage
 					return;
 				}
 			}
-			firstFilled = true;
+		
 
 			// Append letters of each column to word
 			StringBuilder sb = new StringBuilder();
 			foreach (Entry entry in firstRow)
 			{
-				sb.Append(entry.Text);
+				sb.Append(entry.Text.ToLower());
 			}
 
+			var client = new HttpClient();
+			var request = new HttpRequestMessage
+			{
+				Method = HttpMethod.Get,
+				RequestUri = new Uri($"https://api.dictionaryapi.dev/api/v2/entries/en/{sb.ToString()}"),
+			};
+			using (var response = await client.SendAsync(request))
+			{
+				if (!response.IsSuccessStatusCode)
+				{
+					await DisplayAlert("Attention: the word you entered isn't recognized", "You must enter a recognized word to proceed", "Thank you");
+					return;
+				}
+			}
+
+			if (sb.ToString() == wordToGuess)
+			{
+				for (int i = 0; i < firstRow.Count; i++)
+				{
+					firstRow[i].BackgroundColor = Color.FromHex("#79A637");
+					firstRow[i].TextColor = Color.FromHex("#BFB9B4");
+				}
+				await DisplayAlert("Congratulations!", $"You successfully guessed the word {wordToGuess}", "Thank You");
+			}
+
+			for (int i = 0; i < sb.Length; i++)
+			{
+				if (wordToGuess.Contains(sb[i]))
+				{
+					if (wordToGuess.IndexOf(sb[i]) == i)
+					{
+						firstRow[i].BackgroundColor = Color.FromHex("#79A637");
+						firstRow[i].TextColor = Color.FromHex("#F2AE30");
+						firstRow[i].FontAttributes= FontAttributes.Bold;
+					}
+					else
+					{
+						firstRow[i].BackgroundColor = Color.FromHex("#F2F2F2");
+						firstRow[i].TextColor = Color.FromHex("1F260F");
+					}
+				}
+			}
+			firstFilled = true;
 		}
 		else if (firstFilled && !secondFilled)
 		{
@@ -2175,6 +2222,55 @@ public partial class MainPage : ContentPage
 				}
 			}
 			secondFilled = true;
+
+			// Append letters of each column to word
+			StringBuilder sb = new StringBuilder();
+			foreach (Entry entry in firstRow)
+			{
+				sb.Append(entry.Text.ToLower());
+			}
+
+			var client = new HttpClient();
+			var request = new HttpRequestMessage
+			{
+				Method = HttpMethod.Get,
+				RequestUri = new Uri($"https://api.dictionaryapi.dev/api/v2/entries/en/{sb.ToString()}"),
+			};
+			using (var response = await client.SendAsync(request))
+			{
+				if (!response.IsSuccessStatusCode)
+				{
+					await DisplayAlert("Attention: the word you entered isn't recognized", "You must enter a recognized word to proceed", "Thank you");
+					return;
+				}
+			}
+
+			if (sb.ToString() == wordToGuess)
+			{
+				for (int i = 0; i < firstRow.Count; i++)
+				{
+					firstRow[i].BackgroundColor = Color.FromHex("#79A637");
+					firstRow[i].TextColor = Color.FromHex("#BFB9B4");
+				}
+				await DisplayAlert("Congratulations!", $"You successfully guessed the word {wordToGuess}", "Thank You");
+			}
+
+			for (int i = 0; i < sb.Length; i++)
+			{
+				if (wordToGuess.Contains(sb[i]))
+				{
+					if (wordToGuess.IndexOf(sb[i]) == i)
+					{
+						firstRow[i].BackgroundColor = Color.FromHex("#79A637");
+						firstRow[i].TextColor = Color.FromHex("#BFB9B4");
+					}
+					else
+					{
+						firstRow[i].BackgroundColor = Color.FromHex("#F2F2F2");
+						firstRow[i].TextColor = Color.FromHex("1F260F");
+					}
+				}
+			}
 		}
 		else if (secondFilled && !thirdFilled)
 		{
@@ -2187,6 +2283,55 @@ public partial class MainPage : ContentPage
 				}
 			}
 			thirdFilled = true;
+
+			// Append letters of each column to word
+			StringBuilder sb = new StringBuilder();
+			foreach (Entry entry in firstRow)
+			{
+				sb.Append(entry.Text.ToLower());
+			}
+
+			var client = new HttpClient();
+			var request = new HttpRequestMessage
+			{
+				Method = HttpMethod.Get,
+				RequestUri = new Uri($"https://api.dictionaryapi.dev/api/v2/entries/en/{sb.ToString()}"),
+			};
+			using (var response = await client.SendAsync(request))
+			{
+				if (!response.IsSuccessStatusCode)
+				{
+					await DisplayAlert("Attention: the word you entered isn't recognized", "You must enter a recognized word to proceed", "Thank you");
+					return;
+				}
+			}
+
+			if (sb.ToString() == wordToGuess)
+			{
+				for (int i = 0; i < firstRow.Count; i++)
+				{
+					firstRow[i].BackgroundColor = Color.FromHex("#79A637");
+					firstRow[i].TextColor = Color.FromHex("#BFB9B4");
+				}
+				await DisplayAlert("Congratulations!", $"You successfully guessed the word {wordToGuess}", "Thank You");
+			}
+
+			for (int i = 0; i < sb.Length; i++)
+			{
+				if (wordToGuess.Contains(sb[i]))
+				{
+					if (wordToGuess.IndexOf(sb[i]) == i)
+					{
+						firstRow[i].BackgroundColor = Color.FromHex("#79A637");
+						firstRow[i].TextColor = Color.FromHex("#BFB9B4");
+					}
+					else
+					{
+						firstRow[i].BackgroundColor = Color.FromHex("#F2F2F2");
+						firstRow[i].TextColor = Color.FromHex("1F260F");
+					}
+				}
+			}
 		}
 		else if (thirdFilled && !fourthFilled)
 		{
@@ -2199,6 +2344,55 @@ public partial class MainPage : ContentPage
 				}
 			}
 			fourthFilled = true;
+
+			// Append letters of each column to word
+			StringBuilder sb = new StringBuilder();
+			foreach (Entry entry in firstRow)
+			{
+				sb.Append(entry.Text.ToLower());
+			}
+
+			var client = new HttpClient();
+			var request = new HttpRequestMessage
+			{
+				Method = HttpMethod.Get,
+				RequestUri = new Uri($"https://api.dictionaryapi.dev/api/v2/entries/en/{sb.ToString()}"),
+			};
+			using (var response = await client.SendAsync(request))
+			{
+				if (!response.IsSuccessStatusCode)
+				{
+					await DisplayAlert("Attention: the word you entered isn't recognized", "You must enter a recognized word to proceed", "Thank you");
+					return;
+				}
+			}
+
+			if (sb.ToString() == wordToGuess)
+			{
+				for (int i = 0; i < firstRow.Count; i++)
+				{
+					firstRow[i].BackgroundColor = Color.FromHex("#79A637");
+					firstRow[i].TextColor = Color.FromHex("#BFB9B4");
+				}
+				await DisplayAlert("Congratulations!", $"You successfully guessed the word {wordToGuess}", "Thank You");
+			}
+
+			for (int i = 0; i < sb.Length; i++)
+			{
+				if (wordToGuess.Contains(sb[i]))
+				{
+					if (wordToGuess.IndexOf(sb[i]) == i)
+					{
+						firstRow[i].BackgroundColor = Color.FromHex("#79A637");
+						firstRow[i].TextColor = Color.FromHex("#BFB9B4");
+					}
+					else
+					{
+						firstRow[i].BackgroundColor = Color.FromHex("#F2F2F2");
+						firstRow[i].TextColor = Color.FromHex("1F260F");
+					}
+				}
+			}
 		}
 
 		else if (fourthFilled && !fifthFilled)
@@ -2212,6 +2406,55 @@ public partial class MainPage : ContentPage
 				}
 			}
 			fifthFilled = true;
+
+			// Append letters of each column to word
+			StringBuilder sb = new StringBuilder();
+			foreach (Entry entry in firstRow)
+			{
+				sb.Append(entry.Text.ToLower());
+			}
+
+			var client = new HttpClient();
+			var request = new HttpRequestMessage
+			{
+				Method = HttpMethod.Get,
+				RequestUri = new Uri($"https://api.dictionaryapi.dev/api/v2/entries/en/{sb.ToString()}"),
+			};
+			using (var response = await client.SendAsync(request))
+			{
+				if (!response.IsSuccessStatusCode)
+				{
+					await DisplayAlert("Attention: the word you entered isn't recognized", "You must enter a recognized word to proceed", "Thank you");
+					return;
+				}
+			}
+
+			if (sb.ToString() == wordToGuess)
+			{
+				for (int i = 0; i < firstRow.Count; i++)
+				{
+					firstRow[i].BackgroundColor = Color.FromHex("#79A637");
+					firstRow[i].TextColor = Color.FromHex("#BFB9B4");
+				}
+				await DisplayAlert("Congratulations!", $"You successfully guessed the word {wordToGuess}", "Thank You");
+			}
+
+			for (int i = 0; i < sb.Length; i++)
+			{
+				if (wordToGuess.Contains(sb[i]))
+				{
+					if (wordToGuess.IndexOf(sb[i]) == i)
+					{
+						firstRow[i].BackgroundColor = Color.FromHex("#79A637");
+						firstRow[i].TextColor = Color.FromHex("#BFB9B4");
+					}
+					else
+					{
+						firstRow[i].BackgroundColor = Color.FromHex("#F2F2F2");
+						firstRow[i].TextColor = Color.FromHex("1F260F");
+					}
+				}
+			}
 		}
 		else if (fifthFilled && !sixthFilled)
 		{
@@ -2224,6 +2467,55 @@ public partial class MainPage : ContentPage
 				}
 			}
 			sixthFilled = true;
+
+			// Append letters of each column to word
+			StringBuilder sb = new StringBuilder();
+			foreach (Entry entry in firstRow)
+			{
+				sb.Append(entry.Text.ToLower());
+			}
+
+			var client = new HttpClient();
+			var request = new HttpRequestMessage
+			{
+				Method = HttpMethod.Get,
+				RequestUri = new Uri($"https://api.dictionaryapi.dev/api/v2/entries/en/{sb.ToString()}"),
+			};
+			using (var response = await client.SendAsync(request))
+			{
+				if (!response.IsSuccessStatusCode)
+				{
+					await DisplayAlert("Attention: the word you entered isn't recognized", "You must enter a recognized word to proceed", "Thank you");
+					return;
+				}
+			}
+
+			if (sb.ToString() == wordToGuess)
+			{
+				for (int i = 0; i < firstRow.Count; i++)
+				{
+					firstRow[i].BackgroundColor = Color.FromHex("#79A637");
+					firstRow[i].TextColor = Color.FromHex("#BFB9B4");
+				}
+				await DisplayAlert("Congratulations!", $"You successfully guessed the word {wordToGuess}", "Thank You");
+			}
+
+			for (int i = 0; i < sb.Length; i++)
+			{
+				if (wordToGuess.Contains(sb[i]))
+				{
+					if (wordToGuess.IndexOf(sb[i]) == i)
+					{
+						firstRow[i].BackgroundColor = Color.FromHex("#79A637");
+						firstRow[i].TextColor = Color.FromHex("#BFB9B4");
+					}
+					else
+					{
+						firstRow[i].BackgroundColor = Color.FromHex("#F2F2F2");
+						firstRow[i].TextColor = Color.FromHex("1F260F");
+					}
+				}
+			}
 		}
 	}
 
