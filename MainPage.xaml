@@ -5,9 +5,22 @@
              BackgroundColor="#8857F2"
              Title="Wordle">
 
-    <Grid ColumnDefinitions="*" RowDefinitions=".0*, .62*, .0*, .38*, .0*">
+    <Grid ColumnDefinitions=".3*,.4*,.3*" RowDefinitions=".0*, .62*, .0*, .38*, .0*">
         <Image x:Name="backgroundImage" Source="gradient.png" Aspect="AspectFill" HorizontalOptions="Start" Grid.RowSpan="5" Grid.ColumnSpan="3"/>
-        <Grid Grid.Column="0" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Start">
+        <VerticalStackLayout Grid.Row="1" Grid.Column="0" HorizontalOptions="Center" >
+            <Label Grid.Row="1" Grid.Column="0" Text="RULES" TextColor="#0D1C26" FontSize="24" FontFamily="myriad" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+            <Label Grid.Row="1" Grid.Column="0" Text="At the beginning of each game, a random 5 letter word will be selected. You have six attempts to guess the word." TextColor="#1F3140" FontSize="18" FontFamily="myriad" HorizontalTextAlignment="Center"/>
+            <Label Grid.Row="1" Grid.Column="0" Text="You must enter in a valid, real word, to facilitate a guess. The word you guess will be cross-referenced through a Merriam-Webster dictionary API to verify that it is a real word." TextColor="#1F3140" FontSize="18" FontFamily="myriad" HorizontalTextAlignment="Center"/>
+            <Label Grid.Row="1" Grid.Column="0" Text="If you guess a correct letter in the correct location of the target word, the tile behind the letter will turn green. A correct letter in the incorrect location will turn the tile white. Otherwise the tile will remain unchanged." TextColor="#1F3140" FontSize="18" FontFamily="myriad" HorizontalTextAlignment="Center"/>
+            <Label Grid.Row="1" Grid.Column="0" Text="Happy guessing!" TextColor="#1F3140" FontSize="18" FontFamily="myriad" HorizontalTextAlignment="Center"/>
+        </VerticalStackLayout>
+        <VerticalStackLayout Grid.Row="1" Grid.Column="2" HorizontalOptions="Start" >
+            <Label IsVisible="false" x:Name="resultLabel" Grid.Row="1" Grid.Column="0" Text="" TextColor="#0D1C26" FontSize="18" FontFamily="myriad" HorizontalTextAlignment="Center" FontAttributes="Bold" LineBreakMode="WordWrap"/>
+            <Label IsVisible="false" x:Name="correctWordLabel" Grid.Row="1" Grid.Column="0" Text="" TextColor="#1F3140" FontSize="16" FontFamily="myriad" HorizontalTextAlignment="Center" LineBreakMode="WordWrap"/>
+            <Label IsVisible="false" x:Name="correctWordLabel2" Grid.Row="1" Grid.Column="0" Text="" TextColor="#1F3140" FontSize="16" FontFamily="myriad" HorizontalTextAlignment="Center" LineBreakMode="WordWrap"/>
+
+        </VerticalStackLayout>
+        <Grid Grid.Column="1" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Start">
             <Grid.RowDefinitions>
                 <RowDefinition Height="85"/>
                 <RowDefinition Height="85"/>
@@ -17,169 +30,169 @@
                 <RowDefinition Height="85"/>
             </Grid.RowDefinitions>
             <HorizontalStackLayout x:Name="firstRow" Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Center">
-                <Entry WidthRequest="75" Text="" x:Name="oneOne" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontSize="20" TextColor="#F2E963">
+                <Entry WidthRequest="75" Text="" x:Name="oneOne" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontFamily="myriad" FontSize="20" TextColor="#F2E963">
                     <Entry.Shadow>
                         <Shadow Brush="#F2B749" Offset="0, 0" Radius="15" Opacity="0.1"/>
                     </Entry.Shadow>
                 </Entry>
-                <Entry WidthRequest="75" Text="" x:Name="twoOne" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontSize="20" TextColor="#F2E963">
+                <Entry WidthRequest="75" Text="" x:Name="twoOne" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontFamily="myriad" FontSize="20" TextColor="#F2E963">
                     <Entry.Shadow>
                         <Shadow Brush="#F2B749" Offset="0, 0" Radius="15" Opacity="0.1"/>
                     </Entry.Shadow>
                 </Entry>
-                <Entry WidthRequest="75" Text="" x:Name="threeOne" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontSize="20" TextColor="#F2E963">
+                <Entry WidthRequest="75" Text="" x:Name="threeOne" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontFamily="myriad" FontSize="20" TextColor="#F2E963">
                     <Entry.Shadow>
                         <Shadow Brush="#F2B749" Offset="0, 0" Radius="15" Opacity="0.1"/>
                     </Entry.Shadow>
                 </Entry>
-                <Entry WidthRequest="75" Text="" x:Name="fourOne" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontSize="20" TextColor="#F2E963">
+                <Entry WidthRequest="75" Text="" x:Name="fourOne" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontFamily="myriad" FontSize="20" TextColor="#F2E963">
                     <Entry.Shadow>
                         <Shadow Brush="#F2B749" Offset="0, 0" Radius="15" Opacity="0.1"/>
                     </Entry.Shadow>
                 </Entry>
-                <Entry WidthRequest="75" Text="" x:Name="fiveOne" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontSize="20" TextColor="#F2E963">
+                <Entry WidthRequest="75" Text="" x:Name="fiveOne" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontFamily="myriad" FontSize="20" TextColor="#F2E963">
                     <Entry.Shadow>
                         <Shadow Brush="#F2B749" Offset="0, 0" Radius="15" Opacity="0.1"/>
                     </Entry.Shadow>
                 </Entry>
             </HorizontalStackLayout>
             <HorizontalStackLayout x:Name="secondRow" Grid.Row="1" HorizontalOptions="Center" VerticalOptions="Center">
-                <Entry WidthRequest="75" Text="" x:Name="oneTwo" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontSize="20" TextColor="#F2E963">
+                <Entry WidthRequest="75" Text="" x:Name="oneTwo" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontFamily="myriad" FontSize="20" TextColor="#F2E963">
                     <Entry.Shadow>
                         <Shadow Brush="#F2B749" Offset="0, 0" Radius="15" Opacity="0.1"/>
                     </Entry.Shadow>
                 </Entry>
-                <Entry WidthRequest="75" Text="" x:Name="twoTwo" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontSize="20" TextColor="#F2E963">
+                <Entry WidthRequest="75" Text="" x:Name="twoTwo" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontFamily="myriad" FontSize="20" TextColor="#F2E963">
                     <Entry.Shadow>
                         <Shadow Brush="#F2B749" Offset="0, 0" Radius="15" Opacity="0.1"/>
                     </Entry.Shadow>
                 </Entry>
-                <Entry WidthRequest="75" Text="" x:Name="threeTwo" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontSize="20" TextColor="#F2E963">
+                <Entry WidthRequest="75" Text="" x:Name="threeTwo" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontFamily="myriad" FontSize="20" TextColor="#F2E963">
                     <Entry.Shadow>
                         <Shadow Brush="#F2B749" Offset="0, 0" Radius="15" Opacity="0.1"/>
                     </Entry.Shadow>
                 </Entry>
-                <Entry WidthRequest="75" Text="" x:Name="fourTwo" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontSize="20" TextColor="#F2E963">
+                <Entry WidthRequest="75" Text="" x:Name="fourTwo" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontFamily="myriad" FontSize="20" TextColor="#F2E963">
                     <Entry.Shadow>
                         <Shadow Brush="#F2B749" Offset="0, 0" Radius="15" Opacity="0.1"/>
                     </Entry.Shadow>
                 </Entry>
-                <Entry WidthRequest="75" Text="" x:Name="fiveTwo" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontSize="20" TextColor="#F2E963">
+                <Entry WidthRequest="75" Text="" x:Name="fiveTwo" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontFamily="myriad" FontSize="20" TextColor="#F2E963">
                     <Entry.Shadow>
                         <Shadow Brush="#F2B749" Offset="0, 0" Radius="15" Opacity="0.1"/>
                     </Entry.Shadow>
                 </Entry>
             </HorizontalStackLayout>
             <HorizontalStackLayout x:Name="thirdRow" Grid.Row="2" HorizontalOptions="Center" VerticalOptions="Center">
-                <Entry WidthRequest="75" Text="" x:Name="oneThree" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontSize="20" TextColor="#F2E963">
+                <Entry WidthRequest="75" Text="" x:Name="oneThree" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontFamily="myriad" FontSize="20" TextColor="#F2E963">
                     <Entry.Shadow>
                         <Shadow Brush="#F2B749" Offset="0, 0" Radius="15" Opacity="0.1"/>
                     </Entry.Shadow>
                 </Entry>
-                <Entry WidthRequest="75" Text="" x:Name="twoThree" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontSize="20" TextColor="#F2E963">
+                <Entry WidthRequest="75" Text="" x:Name="twoThree" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontFamily="myriad" FontSize="20" TextColor="#F2E963">
                     <Entry.Shadow>
                         <Shadow Brush="#F2B749" Offset="0, 0" Radius="15" Opacity="0.1"/>
                     </Entry.Shadow>
                 </Entry>
-                <Entry WidthRequest="75" Text="" x:Name="threeThree" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontSize="20" TextColor="#F2E963">
+                <Entry WidthRequest="75" Text="" x:Name="threeThree" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontFamily="myriad" FontSize="20" TextColor="#F2E963">
                     <Entry.Shadow>
                         <Shadow Brush="#F2B749" Offset="0, 0" Radius="15" Opacity="0.1"/>
                     </Entry.Shadow>
                 </Entry>
-                <Entry WidthRequest="75" Text="" x:Name="fourThree" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontSize="20" TextColor="#F2E963">
+                <Entry WidthRequest="75" Text="" x:Name="fourThree" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontFamily="myriad" FontSize="20" TextColor="#F2E963">
                     <Entry.Shadow>
                         <Shadow Brush="#F2B749" Offset="0, 0" Radius="15" Opacity="0.1"/>
                     </Entry.Shadow>
                 </Entry>
-                <Entry WidthRequest="75" Text="" x:Name="fiveThree" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontSize="20" TextColor="#F2E963">
+                <Entry WidthRequest="75" Text="" x:Name="fiveThree" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontFamily="myriad" FontSize="20" TextColor="#F2E963">
                     <Entry.Shadow>
                         <Shadow Brush="#F2B749" Offset="0, 0" Radius="15" Opacity="0.1"/>
                     </Entry.Shadow>
                 </Entry>
             </HorizontalStackLayout>
             <HorizontalStackLayout x:Name="fourthRow" Grid.Row="3" HorizontalOptions="Center" VerticalOptions="Center" >
-                <Entry WidthRequest="75" Text="" x:Name="oneFour" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontSize="20" TextColor="#F2E963">
+                <Entry WidthRequest="75" Text="" x:Name="oneFour" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontFamily="myriad" FontSize="20" TextColor="#F2E963">
                     <Entry.Shadow>
                         <Shadow Brush="#F2B749" Offset="0, 0" Radius="15" Opacity="0.1"/>
                     </Entry.Shadow>
                 </Entry>
-                <Entry WidthRequest="75" Text="" x:Name="twoFour" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontSize="20" TextColor="#F2E963">
+                <Entry WidthRequest="75" Text="" x:Name="twoFour" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontFamily="myriad" FontSize="20" TextColor="#F2E963">
                     <Entry.Shadow>
                         <Shadow Brush="#F2B749" Offset="0, 0" Radius="15" Opacity="0.1"/>
                     </Entry.Shadow>
                 </Entry>
-                <Entry WidthRequest="75" Text="" x:Name="threeFour" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontSize="20" TextColor="#F2E963">
+                <Entry WidthRequest="75" Text="" x:Name="threeFour" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontFamily="myriad" FontSize="20" TextColor="#F2E963">
                     <Entry.Shadow>
                         <Shadow Brush="#F2B749" Offset="0, 0" Radius="15" Opacity="0.1"/>
                     </Entry.Shadow>
                 </Entry>
-                <Entry WidthRequest="75" Text="" x:Name="fourFour" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontSize="20" TextColor="#F2E963">
+                <Entry WidthRequest="75" Text="" x:Name="fourFour" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontFamily="myriad" FontSize="20" TextColor="#F2E963">
                     <Entry.Shadow>
                         <Shadow Brush="#F2B749" Offset="0, 0" Radius="15" Opacity="0.1"/>
                     </Entry.Shadow>
                 </Entry>
-                <Entry WidthRequest="75" Text="" x:Name="fiveFour" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontSize="20" TextColor="#F2E963">
+                <Entry WidthRequest="75" Text="" x:Name="fiveFour" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontFamily="myriad" FontSize="20" TextColor="#F2E963">
                     <Entry.Shadow>
                         <Shadow Brush="#F2B749" Offset="0, 0" Radius="15" Opacity="0.1"/>
                     </Entry.Shadow>
                 </Entry>
             </HorizontalStackLayout>
             <HorizontalStackLayout x:Name="fifthRow" Grid.Row="4" HorizontalOptions="Center" VerticalOptions="Center">
-                <Entry WidthRequest="75" Text="" x:Name="oneFive" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontSize="20" TextColor="#F2E963">
+                <Entry WidthRequest="75" Text="" x:Name="oneFive" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontFamily="myriad" FontSize="20" TextColor="#F2E963">
                     <Entry.Shadow>
                         <Shadow Brush="#F2B749" Offset="0, 0" Radius="15" Opacity="0.1"/>
                     </Entry.Shadow>
                 </Entry>
-                <Entry WidthRequest="75" Text="" x:Name="twoFive" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontSize="20" TextColor="#F2E963">
+                <Entry WidthRequest="75" Text="" x:Name="twoFive" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontFamily="myriad" FontSize="20" TextColor="#F2E963">
                     <Entry.Shadow>
                         <Shadow Brush="#F2B749" Offset="0, 0" Radius="15" Opacity="0.1"/>
                     </Entry.Shadow>
                 </Entry>
-                <Entry WidthRequest="75" Text="" x:Name="threeFive" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontSize="20" TextColor="#F2E963">
+                <Entry WidthRequest="75" Text="" x:Name="threeFive" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontFamily="myriad" FontSize="20" TextColor="#F2E963">
                     <Entry.Shadow>
                         <Shadow Brush="#F2B749" Offset="0, 0" Radius="15" Opacity="0.1"/>
                     </Entry.Shadow>
                 </Entry>
-                <Entry WidthRequest="75" Text="" x:Name="fourFive" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontSize="20" TextColor="#F2E963">
+                <Entry WidthRequest="75" Text="" x:Name="fourFive" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontFamily="myriad" FontSize="20" TextColor="#F2E963">
                     <Entry.Shadow>
                         <Shadow Brush="#F2B749" Offset="0, 0" Radius="15" Opacity="0.1"/>
                     </Entry.Shadow>
                 </Entry>
-                <Entry WidthRequest="75" Text="" x:Name="fiveFive" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontSize="20" TextColor="#F2E963">
+                <Entry WidthRequest="75" Text="" x:Name="fiveFive" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontFamily="myriad" FontSize="20" TextColor="#F2E963">
                     <Entry.Shadow>
                         <Shadow Brush="#F2B749" Offset="0, 0" Radius="15" Opacity="0.1"/>
                     </Entry.Shadow>
                 </Entry>
             </HorizontalStackLayout>
             <HorizontalStackLayout x:Name="sixthRow" Grid.Row="5" HorizontalOptions="Center" VerticalOptions="Center">
-                <Entry WidthRequest="75" Text="" x:Name="oneSix" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontSize="20" TextColor="#F2E963">
+                <Entry WidthRequest="75" Text="" x:Name="oneSix" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontFamily="myriad" FontSize="20" TextColor="#F2E963">
                     <Entry.Shadow>
                         <Shadow Brush="#F2B749" Offset="0, 0" Radius="15" Opacity="0.1"/>
                     </Entry.Shadow>
                 </Entry>
-                <Entry WidthRequest="75" Text="" x:Name="twoSix" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontSize="20" TextColor="#F2E963">
+                <Entry WidthRequest="75" Text="" x:Name="twoSix" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontFamily="myriad" FontSize="20" TextColor="#F2E963">
                     <Entry.Shadow>
                         <Shadow Brush="#F2B749" Offset="0, 0" Radius="15" Opacity="0.1"/>
                     </Entry.Shadow>
                 </Entry>
-                <Entry WidthRequest="75" Text="" x:Name="threeSix" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontSize="20" TextColor="#F2E963">
+                <Entry WidthRequest="75" Text="" x:Name="threeSix" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontFamily="myriad" FontSize="20" TextColor="#F2E963">
                     <Entry.Shadow>
                         <Shadow Brush="#F2B749" Offset="0, 0" Radius="15" Opacity="0.1"/>
                     </Entry.Shadow>
                 </Entry>
-                <Entry WidthRequest="75" Text="" x:Name="fourSix" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontSize="20" TextColor="#F2E963">
+                <Entry WidthRequest="75" Text="" x:Name="fourSix" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontFamily="myriad" FontSize="20" TextColor="#F2E963">
                     <Entry.Shadow>
                         <Shadow Brush="#F2B749" Offset="0, 0" Radius="15" Opacity="0.1"/>
                     </Entry.Shadow>
                 </Entry>
-                <Entry WidthRequest="75" Text="" x:Name="fiveSix" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontSize="20" TextColor="#F2E963">
+                <Entry WidthRequest="75" Text="" x:Name="fiveSix" HeightRequest="75" IsEnabled="False" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" BackgroundColor="#1F260F" Margin="10, 0, 10, 0" FontFamily="myriad" FontSize="20" TextColor="#F2E963">
                     <Entry.Shadow>
                         <Shadow Brush="#F2B749" Offset="0, 0" Radius="15" Opacity="0.1"/>
                     </Entry.Shadow>
                 </Entry>
             </HorizontalStackLayout>                                                                                                                             
         </Grid>
-        <Grid Grid.Row="3" Grid.Column="0" HorizontalOptions="Center" VerticalOptions="Start" Margin="0, -220, 0, 0">
+        <Grid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" HorizontalOptions="Center" VerticalOptions="Start" Margin="0, -220, 0, 0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="85"/>
                 <RowDefinition Height="85"/>
@@ -219,6 +232,7 @@
                 <Button x:Name="bButton" Clicked="OnBClicked" Text="B" TextColor="#F2B749" BackgroundColor="Transparent" HeightRequest="65" WidthRequest="65" Margin="10, 0, 10, 0" FontFamily="myriad" FontAttributes="Bold" FontSize="20"/>
                 <Button x:Name="nButton" Clicked="OnNClicked" Text="N" TextColor="#F2B749" BackgroundColor="Transparent" HeightRequest="65" WidthRequest="65" Margin="10, 0, 10, 0" FontFamily="myriad" FontAttributes="Bold" FontSize="20"/>
                 <Button x:Name="mButton" Clicked="OnMClicked" Text="M" TextColor="#F2B749" BackgroundColor="Transparent" HeightRequest="65" WidthRequest="65" Margin="10, 0, 10, 0" FontFamily="myriad" FontAttributes="Bold" FontSize="20"/>
+                <Button x:Name="resetButton" Clicked="OnResetClicked" Text="RESET" TextColor="#F2B749" BackgroundColor="Transparent" HeightRequest="65" WidthRequest="130" Margin="10, 0, 10, 0" FontFamily="myriad" FontAttributes="Bold" FontSize="16"/>
             </HorizontalStackLayout>
         </Grid>
     </Grid>

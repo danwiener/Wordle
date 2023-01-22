@@ -35,9 +35,24 @@ public partial class MainPage : ContentPage
 	{
 		base.OnAppearing();
 
+		GenerateRandom:
 		Random rand = new Random();
 		int indexOfRandomWord = rand.Next(wordsToChoose.Length);
 		wordToGuess = wordsToChoose[indexOfRandomWord];
+
+		var client = new HttpClient();
+		var request = new HttpRequestMessage
+		{
+			Method = HttpMethod.Get,
+			RequestUri = new Uri($"https://api.dictionaryapi.dev/api/v2/entries/en/{wordToGuess}"),
+		};
+		using (var response = await client.SendAsync(request))
+		{
+			while (!response.IsSuccessStatusCode)
+			{
+				goto GenerateRandom;
+			}
+		}
 
 		oneTwo.IsEnabled = false;
 		twoTwo.IsEnabled = false;
@@ -753,7 +768,6 @@ public partial class MainPage : ContentPage
 
 	private async void OnPClicked(object sender, EventArgs e)
 	{
-		await DisplayAlert($"{wordToGuess}", "ok", "ok");
 		List<Entry> firstRow = new List<Entry>() { oneOne, twoOne, threeOne, fourOne, fiveOne };
 		List<Entry> secondRow = new List<Entry>() { oneTwo, twoTwo, threeTwo, fourTwo, fiveTwo };
 		List<Entry> thirdRow = new List<Entry>() { oneThree, twoThree, threeThree, fourThree, fiveThree };
@@ -2082,7 +2096,7 @@ public partial class MainPage : ContentPage
 				}
 			}
 		}
-		else if (firstFilled && ! secondFilled)
+		else if (firstFilled && !secondFilled)
 		{
 			for (int i = secondRow.Count - 1; i >= 0; i--)
 			{
@@ -2139,6 +2153,55 @@ public partial class MainPage : ContentPage
 		}
 	}
 
+	private async void ResetGame()
+	{
+		List<Entry> allEntries = new List<Entry>() { oneOne, twoOne, threeOne, fourOne, fiveOne, oneTwo, twoTwo, threeTwo, fourTwo, fiveTwo, oneThree, twoThree, threeThree, fourThree, fiveThree, oneFour, twoFour, threeFour, fourFour, fiveFour, oneFour, twoFour, threeFour, fourFour, fiveFour, oneFive, twoFive, threeFive, fourFive, fiveFive, oneSix, twoSix, threeSix, fourSix, fiveSix };
+		foreach (Entry entry in allEntries)
+		{
+			entry.Text = string.Empty;
+			firstFilled = false;
+			secondFilled = false;
+			thirdFilled = false;
+			fourthFilled = false;
+			fifthFilled = false;
+			sixthFilled = false;
+
+			entry.BackgroundColor = Color.FromHex("#1F260F");
+			entry.FontAttributes = FontAttributes.None;
+			entry.TextColor = Color.FromHex("#F2E963");
+		}
+
+		resultLabel.IsVisible = false;
+		correctWordLabel.IsVisible = false;
+		correctWordLabel2.IsVisible = false;
+		enterButton.IsEnabled = true;
+		deleteButton.IsEnabled = true;
+
+		GenerateRandom:
+		Random rand = new Random();
+		int indexOfRandomWord = rand.Next(wordsToChoose.Length);
+		wordToGuess = wordsToChoose[indexOfRandomWord];
+
+		var client = new HttpClient();
+		var request = new HttpRequestMessage
+		{
+			Method = HttpMethod.Get,
+			RequestUri = new Uri($"https://api.dictionaryapi.dev/api/v2/entries/en/{wordToGuess}"),
+		};
+		using (var response = await client.SendAsync(request))
+		{
+			while (!response.IsSuccessStatusCode)
+			{
+				goto GenerateRandom;
+			}
+		}
+	}
+
+	private async void OnResetClicked(object sender, EventArgs e)
+	{
+		ResetGame();
+	}
+
 	private async void OnEnterClicked(object sender, EventArgs e)
 	{
 		List<Entry> firstRow = new List<Entry>() { oneOne, twoOne, threeOne, fourOne, fiveOne };
@@ -2158,7 +2221,7 @@ public partial class MainPage : ContentPage
 					return;
 				}
 			}
-		
+
 
 			// Append letters of each column to word
 			StringBuilder sb = new StringBuilder();
@@ -2190,6 +2253,15 @@ public partial class MainPage : ContentPage
 					firstRow[i].TextColor = Color.FromHex("#BFB9B4");
 				}
 				await DisplayAlert("Congratulations!", $"You successfully guessed the word {wordToGuess}", "Thank You");
+				resultLabel.IsVisible = true;
+				resultLabel.Text = "CORRECT. YOU WIN";
+				correctWordLabel.IsVisible = true;
+				correctWordLabel.Text = $"You correctly guessed the word:";
+				correctWordLabel2.IsVisible = true;
+				correctWordLabel2.Text = $"\"{sb.ToString().ToUpper()}\". Play again.";
+				enterButton.IsEnabled = false;
+				firstFilled = true;
+				return;
 			}
 
 			for (int i = 0; i < sb.Length; i++)
@@ -2199,13 +2271,14 @@ public partial class MainPage : ContentPage
 					if (wordToGuess.IndexOf(sb[i]) == i)
 					{
 						firstRow[i].BackgroundColor = Color.FromHex("#79A637");
-						firstRow[i].TextColor = Color.FromHex("#F2AE30");
-						firstRow[i].FontAttributes= FontAttributes.Bold;
+						firstRow[i].TextColor = Color.FromHex("#F2B749");
+						firstRow[i].FontAttributes = FontAttributes.Bold;
 					}
 					else
 					{
 						firstRow[i].BackgroundColor = Color.FromHex("#F2F2F2");
 						firstRow[i].TextColor = Color.FromHex("1F260F");
+						firstRow[i].FontAttributes = FontAttributes.Bold;
 					}
 				}
 			}
@@ -2221,7 +2294,6 @@ public partial class MainPage : ContentPage
 					return;
 				}
 			}
-			secondFilled = true;
 
 			// Append letters of each column to word
 			StringBuilder sb = new StringBuilder();
@@ -2247,12 +2319,21 @@ public partial class MainPage : ContentPage
 
 			if (sb.ToString() == wordToGuess)
 			{
-				for (int i = 0; i < firstRow.Count; i++)
+				for (int i = 0; i < secondRow.Count; i++)
 				{
-					firstRow[i].BackgroundColor = Color.FromHex("#79A637");
-					firstRow[i].TextColor = Color.FromHex("#BFB9B4");
+					secondRow[i].BackgroundColor = Color.FromHex("#79A637");
+					secondRow[i].TextColor = Color.FromHex("#BFB9B4");
 				}
 				await DisplayAlert("Congratulations!", $"You successfully guessed the word {wordToGuess}", "Thank You");
+				resultLabel.IsVisible = true;
+				resultLabel.Text = "CORRECT. YOU WIN";
+				correctWordLabel.IsVisible = true;
+				correctWordLabel.Text = $"You correctly guessed the word:";
+				correctWordLabel2.IsVisible = true;
+				correctWordLabel2.Text = $"\"{sb.ToString().ToUpper()}\". Play again.";
+				enterButton.IsEnabled = false;
+				secondFilled = true;
+				return;
 			}
 
 			for (int i = 0; i < sb.Length; i++)
@@ -2261,16 +2342,19 @@ public partial class MainPage : ContentPage
 				{
 					if (wordToGuess.IndexOf(sb[i]) == i)
 					{
-						firstRow[i].BackgroundColor = Color.FromHex("#79A637");
-						firstRow[i].TextColor = Color.FromHex("#BFB9B4");
+						secondRow[i].BackgroundColor = Color.FromHex("#79A637");
+						secondRow[i].TextColor = Color.FromHex("#F2B749");
+						secondRow[i].FontAttributes = FontAttributes.Bold;
 					}
 					else
 					{
-						firstRow[i].BackgroundColor = Color.FromHex("#F2F2F2");
-						firstRow[i].TextColor = Color.FromHex("1F260F");
+						secondRow[i].BackgroundColor = Color.FromHex("#F2F2F2");
+						secondRow[i].TextColor = Color.FromHex("1F260F");
+						secondRow[i].FontAttributes = FontAttributes.Bold;
 					}
 				}
 			}
+			secondFilled = true;
 		}
 		else if (secondFilled && !thirdFilled)
 		{
@@ -2282,7 +2366,6 @@ public partial class MainPage : ContentPage
 					return;
 				}
 			}
-			thirdFilled = true;
 
 			// Append letters of each column to word
 			StringBuilder sb = new StringBuilder();
@@ -2307,14 +2390,24 @@ public partial class MainPage : ContentPage
 			}
 
 			if (sb.ToString() == wordToGuess)
-			{
-				for (int i = 0; i < firstRow.Count; i++)
+				if (sb.ToString() == wordToGuess)
 				{
-					firstRow[i].BackgroundColor = Color.FromHex("#79A637");
-					firstRow[i].TextColor = Color.FromHex("#BFB9B4");
+					for (int i = 0; i < thirdRow.Count; i++)
+					{
+						thirdRow[i].BackgroundColor = Color.FromHex("#79A637");
+						thirdRow[i].TextColor = Color.FromHex("#BFB9B4");
+					}
+					await DisplayAlert("Congratulations!", $"You successfully guessed the word {wordToGuess}", "Thank You");
+					resultLabel.IsVisible = true;
+					resultLabel.Text = "CORRECT. YOU WIN";
+					correctWordLabel.IsVisible = true;
+					correctWordLabel.Text = $"You correctly guessed the word:";
+					correctWordLabel2.IsVisible = true;
+					correctWordLabel2.Text = $"\"{sb.ToString().ToUpper()}\". Play again.";
+					enterButton.IsEnabled = false;
+					thirdFilled = true;
+					return;
 				}
-				await DisplayAlert("Congratulations!", $"You successfully guessed the word {wordToGuess}", "Thank You");
-			}
 
 			for (int i = 0; i < sb.Length; i++)
 			{
@@ -2322,16 +2415,19 @@ public partial class MainPage : ContentPage
 				{
 					if (wordToGuess.IndexOf(sb[i]) == i)
 					{
-						firstRow[i].BackgroundColor = Color.FromHex("#79A637");
-						firstRow[i].TextColor = Color.FromHex("#BFB9B4");
+						thirdRow[i].BackgroundColor = Color.FromHex("#79A637");
+						thirdRow[i].TextColor = Color.FromHex("#F2B749");
+						thirdRow[i].FontAttributes = FontAttributes.Bold;
 					}
 					else
 					{
-						firstRow[i].BackgroundColor = Color.FromHex("#F2F2F2");
-						firstRow[i].TextColor = Color.FromHex("1F260F");
+						thirdRow[i].BackgroundColor = Color.FromHex("#F2F2F2");
+						thirdRow[i].TextColor = Color.FromHex("1F260F");
+						thirdRow[i].FontAttributes = FontAttributes.Bold;
 					}
 				}
 			}
+			thirdFilled = true;
 		}
 		else if (thirdFilled && !fourthFilled)
 		{
@@ -2343,7 +2439,6 @@ public partial class MainPage : ContentPage
 					return;
 				}
 			}
-			fourthFilled = true;
 
 			// Append letters of each column to word
 			StringBuilder sb = new StringBuilder();
@@ -2368,14 +2463,24 @@ public partial class MainPage : ContentPage
 			}
 
 			if (sb.ToString() == wordToGuess)
-			{
-				for (int i = 0; i < firstRow.Count; i++)
+				if (sb.ToString() == wordToGuess)
 				{
-					firstRow[i].BackgroundColor = Color.FromHex("#79A637");
-					firstRow[i].TextColor = Color.FromHex("#BFB9B4");
+					for (int i = 0; i < fourthRow.Count; i++)
+					{
+						fourthRow[i].BackgroundColor = Color.FromHex("#79A637");
+						fourthRow[i].TextColor = Color.FromHex("#BFB9B4");
+					}
+					await DisplayAlert("Congratulations!", $"You successfully guessed the word {wordToGuess}", "Thank You");
+					resultLabel.IsVisible = true;
+					resultLabel.Text = "CORRECT. YOU WIN";
+					correctWordLabel.IsVisible = true;
+					correctWordLabel.Text = $"You correctly guessed the word:";
+					correctWordLabel2.IsVisible = true;
+									correctWordLabel2.Text = $"\"{sb.ToString().ToUpper()}\". Play again.";
+					enterButton.IsEnabled = false;
+					fourthFilled = true;
+					return;
 				}
-				await DisplayAlert("Congratulations!", $"You successfully guessed the word {wordToGuess}", "Thank You");
-			}
 
 			for (int i = 0; i < sb.Length; i++)
 			{
@@ -2383,16 +2488,19 @@ public partial class MainPage : ContentPage
 				{
 					if (wordToGuess.IndexOf(sb[i]) == i)
 					{
-						firstRow[i].BackgroundColor = Color.FromHex("#79A637");
-						firstRow[i].TextColor = Color.FromHex("#BFB9B4");
+						fourthRow[i].BackgroundColor = Color.FromHex("#79A637");
+						fourthRow[i].TextColor = Color.FromHex("#F2B749");
+						fourthRow[i].FontAttributes = FontAttributes.Bold;
 					}
 					else
 					{
-						firstRow[i].BackgroundColor = Color.FromHex("#F2F2F2");
-						firstRow[i].TextColor = Color.FromHex("1F260F");
+						fourthRow[i].BackgroundColor = Color.FromHex("#F2F2F2");
+						fourthRow[i].TextColor = Color.FromHex("1F260F");
+						fourthRow[i].FontAttributes = FontAttributes.Bold;
 					}
 				}
 			}
+			fourthFilled = true;
 		}
 
 		else if (fourthFilled && !fifthFilled)
@@ -2405,7 +2513,6 @@ public partial class MainPage : ContentPage
 					return;
 				}
 			}
-			fifthFilled = true;
 
 			// Append letters of each column to word
 			StringBuilder sb = new StringBuilder();
@@ -2430,14 +2537,24 @@ public partial class MainPage : ContentPage
 			}
 
 			if (sb.ToString() == wordToGuess)
-			{
-				for (int i = 0; i < firstRow.Count; i++)
+				if (sb.ToString() == wordToGuess)
 				{
-					firstRow[i].BackgroundColor = Color.FromHex("#79A637");
-					firstRow[i].TextColor = Color.FromHex("#BFB9B4");
+					for (int i = 0; i < fifthRow.Count; i++)
+					{
+						fifthRow[i].BackgroundColor = Color.FromHex("#79A637");
+						fifthRow[i].TextColor = Color.FromHex("#BFB9B4");
+					}
+					await DisplayAlert("Congratulations!", $"You successfully guessed the word {wordToGuess}", "Thank You");
+					resultLabel.IsVisible = true;
+					resultLabel.Text = "CORRECT. YOU WIN";
+					correctWordLabel.IsVisible = true;
+					correctWordLabel.Text = $"You correctly guessed the word:";
+					correctWordLabel2.IsVisible = true;
+									correctWordLabel2.Text = $"\"{sb.ToString().ToUpper()}\". Play again.";
+					enterButton.IsEnabled = false;
+					fifthFilled = true;
+					return;
 				}
-				await DisplayAlert("Congratulations!", $"You successfully guessed the word {wordToGuess}", "Thank You");
-			}
 
 			for (int i = 0; i < sb.Length; i++)
 			{
@@ -2445,16 +2562,19 @@ public partial class MainPage : ContentPage
 				{
 					if (wordToGuess.IndexOf(sb[i]) == i)
 					{
-						firstRow[i].BackgroundColor = Color.FromHex("#79A637");
-						firstRow[i].TextColor = Color.FromHex("#BFB9B4");
+						fifthRow[i].BackgroundColor = Color.FromHex("#79A637");
+						fifthRow[i].TextColor = Color.FromHex("#F2B749");
+						fifthRow[i].FontAttributes = FontAttributes.Bold;
 					}
 					else
 					{
-						firstRow[i].BackgroundColor = Color.FromHex("#F2F2F2");
-						firstRow[i].TextColor = Color.FromHex("1F260F");
+						fifthRow[i].BackgroundColor = Color.FromHex("#F2F2F2");
+						fifthRow[i].TextColor = Color.FromHex("1F260F");
+						fifthRow[i].FontAttributes = FontAttributes.Bold;
 					}
 				}
 			}
+			fifthFilled = true;
 		}
 		else if (fifthFilled && !sixthFilled)
 		{
@@ -2466,7 +2586,6 @@ public partial class MainPage : ContentPage
 					return;
 				}
 			}
-			sixthFilled = true;
 
 			// Append letters of each column to word
 			StringBuilder sb = new StringBuilder();
@@ -2491,14 +2610,24 @@ public partial class MainPage : ContentPage
 			}
 
 			if (sb.ToString() == wordToGuess)
-			{
-				for (int i = 0; i < firstRow.Count; i++)
+				if (sb.ToString() == wordToGuess)
 				{
-					firstRow[i].BackgroundColor = Color.FromHex("#79A637");
-					firstRow[i].TextColor = Color.FromHex("#BFB9B4");
+					for (int i = 0; i < sixthRow.Count; i++)
+					{
+						sixthRow[i].BackgroundColor = Color.FromHex("#79A637");
+						sixthRow[i].TextColor = Color.FromHex("#BFB9B4");
+					}
+					await DisplayAlert("Congratulations!", $"You successfully guessed the word {wordToGuess}", "Thank You");
+					resultLabel.IsVisible = true;
+					resultLabel.Text = "CORRECT. YOU WIN";
+					correctWordLabel.IsVisible = true;
+					correctWordLabel.Text = $"You correctly guessed the word:";
+					correctWordLabel2.IsVisible = true;
+									correctWordLabel2.Text = $"\"{sb.ToString().ToUpper()}\". Play again.";
+					enterButton.IsEnabled = false;
+					sixthFilled = true;
+					return;
 				}
-				await DisplayAlert("Congratulations!", $"You successfully guessed the word {wordToGuess}", "Thank You");
-			}
 
 			for (int i = 0; i < sb.Length; i++)
 			{
@@ -2506,18 +2635,32 @@ public partial class MainPage : ContentPage
 				{
 					if (wordToGuess.IndexOf(sb[i]) == i)
 					{
-						firstRow[i].BackgroundColor = Color.FromHex("#79A637");
-						firstRow[i].TextColor = Color.FromHex("#BFB9B4");
+						sixthRow[i].BackgroundColor = Color.FromHex("#79A637");
+						sixthRow[i].TextColor = Color.FromHex("#F2B749");
+						sixthRow[i].FontAttributes = FontAttributes.Bold;
 					}
 					else
 					{
-						firstRow[i].BackgroundColor = Color.FromHex("#F2F2F2");
-						firstRow[i].TextColor = Color.FromHex("1F260F");
+						sixthRow[i].BackgroundColor = Color.FromHex("#F2F2F2");
+						sixthRow[i].TextColor = Color.FromHex("1F260F");
+						sixthRow[i].FontAttributes = FontAttributes.Bold;
 					}
 				}
 			}
+			sixthFilled = true;
+			await DisplayAlert("Oops!", $"You did not successfully guess the word", "Please try again");
+			resultLabel.IsVisible = true;
+			resultLabel.Text = "INCORRECT. YOU LOSE";
+			correctWordLabel.IsVisible = true;
+			correctWordLabel.Text = $"You incorrectly guessed the word:";
+			correctWordLabel2.IsVisible = true;
+			correctWordLabel2.Text = "Play again.";
+			enterButton.IsEnabled = false;
+			deleteButton.IsEnabled = false;
+			return;
 		}
 	}
+
 
 }
 
