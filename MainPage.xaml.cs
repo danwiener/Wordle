@@ -2236,7 +2236,8 @@ public partial class MainPage : ContentPage
 				for (int i = 0; i < firstRow.Count; i++)
 				{
 					firstRow[i].BackgroundColor = Color.FromHex("#79A637");
-					firstRow[i].TextColor = Color.FromHex("#BFB9B4");
+					firstRow[i].TextColor = Color.FromHex("#F2B749");
+					firstRow[i].FontAttributes = FontAttributes.Bold;
 				}
 				await DisplayAlert("Congratulations!", $"You successfully guessed the word {wordToGuess}", "Thank You");
 				resultLabel.IsVisible = true;
@@ -2309,7 +2310,8 @@ public partial class MainPage : ContentPage
 				for (int i = 0; i < secondRow.Count; i++)
 				{
 					secondRow[i].BackgroundColor = Color.FromHex("#79A637");
-					secondRow[i].TextColor = Color.FromHex("#BFB9B4");
+					secondRow[i].TextColor = Color.FromHex("#F2B749");
+					secondRow[i].FontAttributes = FontAttributes.Bold;
 				}
 				await DisplayAlert("Congratulations!", $"You successfully guessed the word {wordToGuess}", "Thank You");
 				resultLabel.IsVisible = true;
@@ -2383,7 +2385,8 @@ public partial class MainPage : ContentPage
 					for (int i = 0; i < thirdRow.Count; i++)
 					{
 						thirdRow[i].BackgroundColor = Color.FromHex("#79A637");
-						thirdRow[i].TextColor = Color.FromHex("#BFB9B4");
+						thirdRow[i].TextColor = Color.FromHex("#F2B749");
+						thirdRow[i].FontAttributes = FontAttributes.Bold;
 					}
 					await DisplayAlert("Congratulations!", $"You successfully guessed the word {wordToGuess}", "Thank You");
 					resultLabel.IsVisible = true;
@@ -2457,7 +2460,8 @@ public partial class MainPage : ContentPage
 					for (int i = 0; i < fourthRow.Count; i++)
 					{
 						fourthRow[i].BackgroundColor = Color.FromHex("#79A637");
-						fourthRow[i].TextColor = Color.FromHex("#BFB9B4");
+						fourthRow[i].TextColor = Color.FromHex("#F2B749");
+						fourthRow[i].FontAttributes = FontAttributes.Bold;
 					}
 					await DisplayAlert("Congratulations!", $"You successfully guessed the word {wordToGuess}", "Thank You");
 					resultLabel.IsVisible = true;
@@ -2532,7 +2536,8 @@ public partial class MainPage : ContentPage
 					for (int i = 0; i < fifthRow.Count; i++)
 					{
 						fifthRow[i].BackgroundColor = Color.FromHex("#79A637");
-						fifthRow[i].TextColor = Color.FromHex("#BFB9B4");
+						fifthRow[i].TextColor = Color.FromHex("#F2B749");
+						fifthRow[i].FontAttributes = FontAttributes.Bold;
 					}
 					await DisplayAlert("Congratulations!", $"You successfully guessed the word {wordToGuess}", "Thank You");
 					resultLabel.IsVisible = true;
@@ -2606,7 +2611,8 @@ public partial class MainPage : ContentPage
 					for (int i = 0; i < sixthRow.Count; i++)
 					{
 						sixthRow[i].BackgroundColor = Color.FromHex("#79A637");
-						sixthRow[i].TextColor = Color.FromHex("#BFB9B4");
+						sixthRow[i].TextColor = Color.FromHex("#F2B749");
+						sixthRow[i].FontAttributes = FontAttributes.Bold;
 					}
 					await DisplayAlert("Congratulations!", $"You successfully guessed the word {wordToGuess}", "Thank You");
 					resultLabel.IsVisible = true;
